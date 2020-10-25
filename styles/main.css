@@ -1,0 +1,90 @@
+:root {
+  /* Gray50 */
+  --gray50: #7f7f7f;
+}
+
+body {
+  font-family: Courier, monospace;
+}
+
+#main-wrapper {
+  padding: 10vh 10vw;
+}
+
+.sections {
+  display: flex;
+}
+
+.l-cols,
+.r-cols {
+  width: 50vw;
+  padding: 12px;
+}
+
+.l-cols {
+  text-align: right;
+  border-right: 1px solid black;
+}
+
+.r-cols {
+  text-align: left;
+  border-left: 1px solid black;
+}
+
+@media screen and (max-width: 600px) {
+  .sections {
+    flex-direction: column;
+  }
+
+  .l-cols,
+  .r-cols {
+    width: 100%;
+  }
+}
+
+ul.index,
+ul.projects,
+ul.setup {
+  padding-left: 0;
+}
+
+ul.index li {
+  list-style-type: decimal-leading-zero;
+  list-style-position: inside;
+  text-transform: capitalize;
+}
+
+ul.index,
+ul.projects {
+  line-height: 20px;
+}
+
+ul.projects,
+ul.setup {
+  list-style: none;
+}
+
+ul.index li::marker {
+  color: var(--gray50);
+}
+
+ul.index li:hover,
+ul.index li:hover a,
+ul.projects li:hover,
+ul.projects li:hover a {
+  background-color: black;
+  color: white;
+  text-decoration: none;
+}
+
+.index-links,
+.project-links {
+  color: black;
+}
+
+h2,
+h4 {
+  /* margin: 0; */
+  color: white;
+  background-color: black;
+}
