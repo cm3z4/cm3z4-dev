@@ -1,10 +1,23 @@
 :root {
-  /* Gray50 */
+  /* gray50 */
   --gray50: #7f7f7f;
+  /* offwhite */
+  --offwhite: #f6f6f6;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: Courier, monospace;
+  background-color: var(--offwhite);
+  padding: 10px;
+}
+
+body p, .setup li {
+  line-height: 24px;
+  font-size: 16px;
 }
 
 #main-wrapper {
@@ -56,15 +69,17 @@ ul.index li {
 
 ul.index,
 ul.projects {
-  line-height: 20px;
+  font-size: 14px;
+  line-height: 22px;
 }
 
 ul.projects,
-ul.setup {
+ul.setup,
+.sub-lists {
   list-style: none;
 }
 
-ul.index li::marker {
+ul.index li::marker, .tags {
   color: var(--gray50);
 }
 
@@ -73,7 +88,7 @@ ul.index li:hover a,
 ul.projects li:hover,
 ul.projects li:hover a {
   background-color: black;
-  color: white;
+  color: var(--offwhite);
   text-decoration: none;
 }
 
@@ -85,6 +100,7 @@ ul.projects li:hover a {
 h2,
 h4 {
   /* margin: 0; */
-  color: white;
+  color: var(--offwhite);
   background-color: black;
+  padding: 4px;
 }
