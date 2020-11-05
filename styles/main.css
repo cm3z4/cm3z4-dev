@@ -15,7 +15,8 @@ body {
   padding: 10px;
 }
 
-body p, .setup li {
+body p,
+.setup li {
   line-height: 24px;
   font-size: 16px;
 }
@@ -44,7 +45,15 @@ body p, .setup li {
   border-left: 1px solid black;
 }
 
+#mepick {
+  max-width: 250px;
+}
+
 @media screen and (max-width: 600px) {
+  #mepick {
+    max-width: 220px;
+  }
+
   .sections {
     flex-direction: column;
   }
@@ -64,7 +73,6 @@ ul.setup {
 ul.index li {
   list-style-type: decimal-leading-zero;
   list-style-position: inside;
-  text-transform: capitalize;
 }
 
 ul.index,
@@ -79,7 +87,8 @@ ul.setup,
   list-style: none;
 }
 
-ul.index li::marker, .tags {
+ul.index li::marker,
+.tags {
   color: var(--gray50);
 }
 
@@ -99,8 +108,14 @@ ul.projects li:hover a {
 
 h2,
 h4 {
-  /* margin: 0; */
   color: var(--offwhite);
   background-color: black;
-  padding: 4px;
+}
+
+.r-cols h2 {
+  padding: 6px 0 2px 6px;
+}
+
+.l-cols h2 {
+  padding: 6px 6px 2px 0;
 }
