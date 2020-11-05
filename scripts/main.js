@@ -4,7 +4,7 @@ document.getElementById("mepick").onmouseover = function () {
 };
 
 function mepickOver() {
-  document.getElementById("mepick").src = "../images/mepick-2.png";
+  document.getElementById("mepick").src = "images/mepick-2.png";
 }
 
 // Hover out "mepick" swap.
@@ -13,5 +13,5 @@ document.getElementById("mepick").onmouseout = function () {
 };
 
 function mepickOut() {
-  document.getElementById("mepick").src = "../images/mepick-1.png";
+  document.getElementById("mepick").src = "images/mepick-1.png";
 }
