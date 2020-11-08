@@ -1,29 +1,38 @@
 :root {
-  /* gray50 */
   --gray50: #7f7f7f;
-  /* offwhite */
   --offwhite: #f6f6f6;
 }
 
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html {
+  font-size: 62.5%; /* 10px */
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: Courier, monospace;
+  font-family: Courier, monospace, "Courier New";
   background-color: var(--offwhite);
 }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
+body p {
+  line-height: 24px;
+  font-size: 1.6rem;
 }
 
-body p,
-.setup li {
-  line-height: 24px;
-  font-size: 16px;
+a {
+  color: black;
+}
+
+li:focus,
+a:focus {
+  border: none;
+  outline: none;
 }
 
 #main-wrapper {
@@ -37,7 +46,7 @@ body p,
 .l-cols,
 .r-cols {
   width: 50vw;
-  padding: 12px;
+  padding: 1.2rem;
 }
 
 .l-cols {
@@ -54,10 +63,11 @@ body p,
   max-width: 250px;
 }
 
-ul.index,
-ul.projects,
-ul.setup {
-  padding-left: 0;
+ul,
+ul li {
+  margin: 1rem 0;
+  font-size: 1.4rem;
+  line-height: 22px;
 }
 
 ul.index li {
@@ -65,56 +75,57 @@ ul.index li {
   list-style-position: inside;
 }
 
-ul.index,
-ul.projects {
-  font-size: 14px;
-  line-height: 22px;
+ul.index li::marker,
+.custom-marker {
+  color: var(--gray50);
+  font-size: 1.2rem;
 }
 
 ul.projects,
 ul.setup,
-.sub-lists {
+ul.links {
   list-style: none;
 }
 
-ul.index li::marker,
-.tags {
-  color: var(--gray50);
-}
-
-ul.index li:hover,
-ul.index li:hover a,
-ul.projects li:hover,
-ul.projects li:hover a {
+ul li:hover,
+ul li:hover a {
   background-color: black;
   color: var(--offwhite);
   text-decoration: none;
 }
 
-.index-links,
-.project-links {
-  color: black;
-}
-
-.main-header,
+#main-header,
 .section-headers {
   color: var(--offwhite);
   background-color: black;
   text-transform: uppercase;
 }
 
-.main-header {
+#main-header {
+  margin: 1rem 0;
   padding: 2px 6px 0 6px;
+  font-size: 2rem;
+}
+
+#sub-main-header {
+  display: inline-block;
+  padding: 3px 1px 1px 1px;
+  font-size: 1.6rem;
 }
 
 .section-headers {
   padding: 2px 6px 0 6px;
+  font-size: 2rem;
 }
 
 /* [Small Devices] */
 @media screen and (max-width: 600px) {
+  #main-wrapper {
+    padding: 6vh 4vw;
+  }
+
   #mepick {
-    max-width: 220px;
+    max-width: 100%;
   }
 
   .sections {
