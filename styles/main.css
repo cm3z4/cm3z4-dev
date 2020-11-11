@@ -16,7 +16,7 @@ html {
 }
 
 body {
-  font-family: Courier, monospace, "Courier New";
+  font-family: monospace;
   background-color: var(--offwhite);
 }
 
@@ -103,18 +103,17 @@ ul li:hover a {
 
 #main-header {
   margin: 1rem 0;
-  padding: 2px 6px 0 6px;
+  padding: 0 6px;
   font-size: 2rem;
 }
 
 #sub-main-header {
   display: inline-block;
-  padding: 3px 1px 1px 1px;
   font-size: 1.6rem;
 }
 
 .section-headers {
-  padding: 2px 6px 0 6px;
+  padding: 0 6px;
   font-size: 2rem;
 }
 
