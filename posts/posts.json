@@ -1,0 +1,9 @@
+{
+  "posts": [
+    {
+      "postId": "post_1",
+      "postName": "My Favorite Movies Growing Up",
+      "postPath": "/posts/my-favorite-movies-growing-up.html"
+    }
+  ]
+}

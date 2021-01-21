@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   class="vector"
+   width="300px"
+   height="300px"
+   version="1.1"
+   style="fill:none;stroke:black;stroke-width:28px;stroke-linecap:square;"
+   id="svg16"
+   sodipodi:docname="webring.svg"
+   inkscape:version="1.0.1 (1.0.1+r74)">
+  <metadata
+     id="metadata22">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs20" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1366"
+     inkscape:window-height="710"
+     id="namedview18"
+     showgrid="false"
+     inkscape:zoom="0.95333333"
+     inkscape:cx="44.076869"
+     inkscape:cy="199.84281"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg16">
+    <inkscape:grid
+       type="xygrid"
+       id="grid24" />
+  </sodipodi:namedview>
+  <g
+     transform="translate(3.5429399,30)"
+     id="g14">
+    <g
+       transform="rotate(120,31.69873,118.30127)"
+       id="g4">
+      <path
+         d="M 0,-60 A 60,60 0 1 0 0,60 h 100"
+         id="path2" />
+    </g>
+    <g
+       transform="rotate(-120,118.30127,31.69873)"
+       id="g8">
+      <path
+         d="M 0,-60 A 60,60 0 1 0 0,60 h 100"
+         id="path6" />
+    </g>
+    <g
+       transform="translate(150,150)"
+       id="g12">
+      <path
+         d="M 0,-60 A 60,60 0 1 0 0,60 h 100"
+         id="path10" />
+    </g>
+  </g>
+</svg>

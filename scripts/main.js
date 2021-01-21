@@ -1,17 +1,46 @@
-// Hover over "mepick" swap.
-document.getElementById("mepick").onmouseover = function () {
-  mepickOver();
-};
+// HOME CODE
+if (document.getElementById("home")) {
+  // Hover over "me" color swap.
+  document.getElementById("me").onmouseover = function () {
+    meColor();
+  };
 
-function mepickOver() {
-  document.getElementById("mepick").src = "images/mepick-2.png";
+  function meColor() {
+    document.getElementById("me").src = "images/me-color.png";
+  }
+
+  // Hover out "me" monochrome swap.
+  document.getElementById("me").onmouseout = function () {
+    meMono();
+  };
+
+  function meMono() {
+    document.getElementById("me").src = "images/me-mono.png";
+  }
 }
 
-// Hover out "mepick" swap.
-document.getElementById("mepick").onmouseout = function () {
-  mepickOut();
-};
+// POST CODE
 
-function mepickOut() {
-  document.getElementById("mepick").src = "images/mepick-1.png";
+// Append all the published blog posts.
+function appendPosts(data) {
+  console.log(data.posts);
+  for (let i = 0; i < data.posts.length; i++) {
+    let postName = data.posts[i].postName;
+    let postPath = data.posts[i].postPath;
+    let node = document.createElement("li");
+    let nodeText = document.createTextNode("- ");
+    node.appendChild(nodeText);
+    let nodeA = document.createElement("a");
+    // nodeA.target = "_blank";
+    nodeA.href = postPath;
+    nodeA.innerText = postName;
+    nodeA.classList.add("post-links");
+    node.appendChild(nodeA);
+    document.getElementById("posts").appendChild(node);
+  }
 }
+
+// Fetch all the published blog posts.
+fetch("../posts/posts.json")
+  .then((response) => response.json())
+  .then((data) => appendPosts(data));

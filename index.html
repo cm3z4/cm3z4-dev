@@ -3,28 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Christopher Meza's personal website + blog.</title>
+    <title>cm3z4 | Home</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Main CSS link. -->
     <link rel="stylesheet" href="./styles/main.css" />
   </head>
-  <body>
+  <body id="home">
     <div id="main-wrapper">
       <div class="sections">
         <div class="l-cols">
           <img
-            id="mepick"
-            src="images/mepick-1.png"
+            id="me"
+            src="images/me-mono.png"
             alt="A picture of Christopher Meza and his wife."
           />
         </div>
         <div class="r-cols">
           <h3 id="main-header">Christopher Meza</h3>
-          <h4 id="sub-main-header">[cm3z4]</h4>
+          <h4 id="sub-main-header">[cm3z4] [GMRS / WRKD233]</h4>
           <ul class="index">
             <li><a href="#bio" class="index-links">Bio</a></li>
             <li><a href="#projects" class="index-links">Projects</a></li>
             <li><a href="#blog" class="index-links">Blog</a></li>
+            <li><a href="#photography" class="index-links">Photography</a></li>
             <li><a href="#setup" class="index-links">Setup</a></li>
             <li><a href="#links" class="index-links">Links</a></li>
           </ul>
@@ -36,8 +43,21 @@
         </div>
         <div class="r-cols">
           <p>
-            Texas-born and bred, a freelance web developer with a zeal for
-            creating art with code.
+            Texas-born and bred, real '90s kid still waiting for the
+            <a
+              href="https://en.wikipedia.org/wiki/Skynet_(Terminator)"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Skynet</a
+            >
+            uprising. Freelance coder and human being for hire. My opinions are
+            mostly my own.
+          </p>
+          <p>
+            <i
+              >"It’s better to have a short life that is full of what you like
+              doing, than a long life spent in a miserable way." — Alan Watts</i
+            >
           </p>
         </div>
       </div>
@@ -64,7 +84,17 @@
           <h3 class="section-headers">Blog</h3>
         </div>
         <div class="r-cols">
-          <p>No posts yet.</p>
+          <ul id="posts"></ul>
+        </div>
+      </div>
+      <div id="photography" class="sections">
+        <div class="l-cols">
+          <h3 class="section-headers">Photography</h3>
+        </div>
+        <div class="r-cols">
+          <ul id="tbd">
+            <li>[ Under construction ]</li>
+          </ul>
         </div>
       </div>
       <div id="setup" class="sections">
@@ -74,13 +104,15 @@
         <div class="r-cols">
           <ul class="setup">
             <li>
-              <span class="custom-marker">[1]</span> T470 | i5-7200U | 16GB |
-              Pop!_OS
+              <span class="custom-marker">[1]</span> Lenovo T470 | Pop!_OS
             </li>
             <li>
-              <span class="custom-marker">[2]</span> X240 | i7-4600U | 8GB |
-              Pop!_OS
+              <span class="custom-marker">[2]</span> Lenovo X240 | Pop!_OS
             </li>
+            <li>
+              <span class="custom-marker">[3]</span> Kenwood TK-880-1 | Base
+            </li>
+            <li><span class="custom-marker">[4]</span> BTECH GMRS-V1 | HT</li>
           </ul>
         </div>
       </div>
@@ -100,19 +132,20 @@
             </li>
             <li>
               -
-              <a href="https://dev.to/cm3z4" target="_blank">DEV</a>
-            </li>
-            <li>
-              -
-              <a
-                href="https://www.upwork.com/freelancers/~01999f8a3cf79b518e"
-                target="_blank"
-                >Upwork</a
-              >
+              <a href="mailto:contact@chrismeza.dev">Electronic mail</a>
             </li>
           </ul>
         </div>
       </div>
+      <footer>
+        <div>
+          <img
+            src="./images/webring.svg"
+            style="width: 28px; display: block; margin-left: auto"
+            alt="Webring"
+          />
+        </div>
+      </footer>
     </div>
     <!-- Main JavaScript link. -->
     <script src="./scripts/main.js"></script>

@@ -1,3 +1,3 @@
-[chrismeza.dev](https://cm3z4.github.io/chrismeza-dev/)
+[cm3z4.dev](https://cm3z4.dev/)
 
-Attempting to design/develop a new lightweight personal website + blog.
+cm3z4's slice of the web.
