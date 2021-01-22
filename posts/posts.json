@@ -1,6 +1,11 @@
 {
   "posts": [
     {
+      "postId": "post_2",
+      "postName": "Why I Got My GMRS License",
+      "postPath": "/posts/why-i-got-my-gmrs-license.html"
+    },
+    {
       "postId": "post_1",
       "postName": "My Favorite Movies Growing Up",
       "postPath": "/posts/my-favorite-movies-growing-up.html"
