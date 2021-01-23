@@ -34,6 +34,12 @@ html {
   scroll-behavior: smooth;
 }
 
+#nojs-alert {
+  text-align: center;
+  margin: 12px 0;
+  color: var(--gray50);
+}
+
 h1,
 h2,
 h3,
@@ -113,8 +119,6 @@ ul.index li::marker,
   font-size: 1.2rem;
 }
 
-ul li:hover,
-ul li:hover a,
 a:hover {
   background-color: black;
   color: white;
@@ -174,6 +178,7 @@ img {
   color: var(--gray50);
   margin: 4px 0;
   font-size: 1.2rem;
+  display: block;
 }
 
 .post-row {

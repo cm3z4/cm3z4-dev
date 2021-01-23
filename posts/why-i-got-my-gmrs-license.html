@@ -13,7 +13,7 @@
     />
 
     <!-- Main CSS link. -->
-    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="/styles/main.css" />
   </head>
   <body>
     <div id="main-wrapper">
@@ -136,7 +136,16 @@
         <div class="post-col-right">
           <div class="sticky">
             <hr class="post-lines" />
-            <ul id="posts"></ul>
+            <ul id="posts">
+              <noscript>
+                <li>
+                  -
+                  <a href="/posts/blog-index.html" class="post-links"
+                    >All blog posts</a
+                  >
+                </li>
+              </noscript>
+            </ul>
           </div>
         </div>
       </div>
@@ -155,6 +164,6 @@
       </footer>
     </div>
     <!-- Main JavaScript link. -->
-    <script src="../scripts/main.js"></script>
+    <script src="/scripts/main.js"></script>
   </body>
 </html>

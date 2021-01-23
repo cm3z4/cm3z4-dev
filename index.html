@@ -17,6 +17,12 @@
   </head>
   <body id="home">
     <div id="main-wrapper">
+      <noscript
+        ><p id="nojs-alert">
+          Hello. You have JavaScript disabled. No worries, only small things are
+          affected.
+        </p></noscript
+      >
       <div class="sections">
         <div class="l-cols">
           <img
@@ -34,7 +40,7 @@
             <li><a href="#blog" class="index-links">Blog</a></li>
             <li><a href="#photography" class="index-links">Photography</a></li>
             <li><a href="#setup" class="index-links">Setup</a></li>
-            <li><a href="#links" class="index-links">Links</a></li>
+            <li><a href="#connect" class="index-links">Connect</a></li>
           </ul>
         </div>
       </div>
@@ -85,7 +91,16 @@
           <h3 class="section-headers">Blog</h3>
         </div>
         <div class="r-cols">
-          <ul id="posts"></ul>
+          <ul id="posts">
+            <noscript>
+              <li>
+                -
+                <a href="/posts/blog-index.html" class="post-links"
+                  >All blog posts</a
+                >
+              </li>
+            </noscript>
+          </ul>
         </div>
       </div>
       <div id="photography" class="sections">
@@ -120,12 +135,12 @@
           </ul>
         </div>
       </div>
-      <div id="links" class="sections">
+      <div id="connect" class="sections">
         <div class="l-cols">
-          <h3 class="section-headers">Links</h3>
+          <h3 class="section-headers">Connect</h3>
         </div>
         <div class="r-cols">
-          <ul class="links">
+          <ul class="connect">
             <li>
               -
               <a href="https://github.com/cm3z4" target="_blank">GitHub</a>
@@ -136,7 +151,7 @@
             </li>
             <li>
               -
-              <a href="mailto:contact@chrismeza.dev">Electronic mail</a>
+              <a href="mailto:contact@chrismeza.dev">Email</a>
             </li>
           </ul>
         </div>
@@ -156,6 +171,6 @@
       </footer>
     </div>
     <!-- Main JavaScript link. -->
-    <script src="./scripts/main.js"></script>
+    <script src="/scripts/main.js"></script>
   </body>
 </html>

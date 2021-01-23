@@ -25,13 +25,15 @@ if (document.getElementById("home")) {
 function appendPosts(data) {
   console.log(data.posts);
   for (let i = 0; i < data.posts.length; i++) {
+    let postDate = data.posts[i].postDate;
     let postName = data.posts[i].postName;
     let postPath = data.posts[i].postPath;
     let node = document.createElement("li");
-    let nodeText = document.createTextNode("- ");
-    node.appendChild(nodeText);
+    let nodeSpan = document.createElement("span");
+    nodeSpan.innerText = postDate + " ";
+    nodeSpan.classList.add("post-dates");
+    node.appendChild(nodeSpan);
     let nodeA = document.createElement("a");
-    // nodeA.target = "_blank";
     nodeA.href = postPath;
     nodeA.innerText = postName;
     nodeA.classList.add("post-links");
