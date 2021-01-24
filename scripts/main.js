@@ -6,7 +6,7 @@ if (document.getElementById("home")) {
   };
 
   function meColor() {
-    document.getElementById("me").src = "images/me-color.png";
+    document.getElementById("me").src = "images/arr/me-color.png";
   }
 
   // Hover out "me" monochrome swap.
@@ -15,7 +15,7 @@ if (document.getElementById("home")) {
   };
 
   function meMono() {
-    document.getElementById("me").src = "images/me-mono.png";
+    document.getElementById("me").src = "images/arr/me-mono.png";
   }
 }
 
