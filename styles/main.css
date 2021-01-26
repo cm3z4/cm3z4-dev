@@ -47,12 +47,11 @@ h4,
 h5,
 h6,
 .sidebar-headers {
-  font-family: "alte_haas_grotesk_bold", "Helvetica Neue", Helvetica, Arial;
+  font-family: "alte_haas_grotesk_bold", "Helvetica Neue", monospace;
 }
 
 p {
-  /* font-family: "Helvetica Neue", Helvetica, Arial; */
-  font-family: monospace;
+  font-family: "alte_haas_grotesk_regular", "Helvetica Neue", monospace;
   font-size: 1.6rem;
   line-height: 26px;
 }
