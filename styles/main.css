@@ -246,6 +246,11 @@ img {
 }
 
 /* MONOCHROME SECTION [ START ] */
+.mono-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .mono-img {
   width: 50%;
 }
@@ -259,6 +264,10 @@ img {
 }
 
 @media screen and (max-width: 600px) {
+  .mono-wrapper {
+    flex-direction: column;
+  }
+
   .mono-img {
     width: 100%;
   }
