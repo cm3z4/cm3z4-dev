@@ -159,6 +159,7 @@ img {
 
 .post-navs {
   font-size: 1.6rem;
+  margin-right: 1rem;
 }
 
 .post-lines {
@@ -173,7 +174,8 @@ img {
   font-style: normal;
 }
 
-.post-dates {
+.post-dates,
+.camera-used {
   color: var(--gray50);
   margin: 4px 0;
   font-size: 1.2rem;
@@ -242,3 +244,28 @@ img {
     padding: 0;
   }
 }
+
+/* MONOCHROME SECTION [ START ] */
+.mono-img {
+  width: 50%;
+}
+
+.mono-img-l {
+  padding-right: 10px;
+}
+
+.mono-img-r {
+  padding-left: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .mono-img {
+    width: 100%;
+  }
+
+  .mono-img-l,
+  .mono-img-r {
+    padding: 0;
+  }
+}
+/* MONOCHROME SECTION [ END ] */
