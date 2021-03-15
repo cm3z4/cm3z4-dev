@@ -1,14 +1,14 @@
 {
   "posts": [
     {
-      "postDate": "01-31-21",
-      "postName": "January-2021",
-      "postPath": "/posts/monochrome/jan-2021.html"
-    },
-    {
       "postDate": "03-01-21",
       "postName": "February-2021",
       "postPath": "/posts/monochrome/feb-2021.html"
+    },
+    {
+      "postDate": "01-31-21",
+      "postName": "January-2021",
+      "postPath": "/posts/monochrome/jan-2021.html"
     }
   ]
 }

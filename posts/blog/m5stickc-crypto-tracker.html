@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cm3z4 | M5StickC Crypto Tracker</title>
+    <link rel="canonical" href="https://cm3z4.dev/" />
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/images/favicons/apple-touch-icon.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="/images/favicons/apple-touch-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="/images/favicons/apple-touch-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="/images/favicons/apple-touch-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="/images/favicons/apple-touch-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="/images/favicons/apple-touch-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="/images/favicons/apple-touch-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="/images/favicons/apple-touch-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/favicons/apple-touch-icon-180x180.png"
+    />
+    <!-- Main CSS link. -->
+    <link rel="stylesheet" href="/styles/main.css" />
+  </head>
+  <body id="top">
+    <div id="main-wrapper">
+      <a class="post-navs monospace" href="/">Home</a>
+      <hr class="post-lines" />
+      <h1 class="post-titles">M5StickC Crypto Tracker</h1>
+      <p class="post-dates">14 March 21</p>
+
+      <div class="post-row">
+        <div class="post-col-left">
+          <img
+            src="/images/arr/crypto-tracker.jpg"
+            alt="M5StickC crypto tracker"
+          />
+          <p class="img-caption">
+            Tracking Bitcoin and Dogecoin with the M5StickC.
+          </p>
+          <p>
+            Whether you found this post by accident or fate, you might be
+            looking to repurpose your abandoned M5StickC for something cool and
+            useful. If you're anything like me, there's a good chance you have a
+            couple of these little orange devils doing nothing more than
+            hoarding dust mites.
+
+            <br /><br />
+
+            Well, look no further! You can copy/paste the sketch below and start
+            getting your money's worth by tracking crypto without having to
+            check your phone/computer all the time.
+
+            <br /><br />
+
+            I did my best to explain what's going on with code comments. The
+            sketch currently uses
+            <a
+              href="https://www.cryptonator.com/api/"
+              rel="noopener"
+              target="_blank"
+              >Cryptonator's</a
+            >
+            API for tracking changes and is configured to track Bitcoin by
+            default.
+
+            <br /><br />
+
+            It's open source, so feel free to tweak it to your liking. Submit a
+            pull request if you see room for improvement. I assume you already
+            know how to configure the Arduino IDE for compiling/pushing sketches
+            to your M5StickC.<br /><br />
+            You can find the source/repo
+            <a
+              href="https://github.com/cm3z4/M5StickC-Crypto-Tracker"
+              rel="noopener"
+              target="_blank"
+              >here</a
+            >.
+          </p>
+
+          <p
+            class="monospace"
+            style="background-color: black; color: #f1f1f1; padding: 20px"
+          >
+            #include &lt;M5StickC.h&gt;<br />
+            #include &lt;WiFi.h&gt;<br />
+            #include &lt;HTTPClient.h&gt;<br />
+            <br />
+            // Insert your network's (Wi-Fi) ssid and password below.<br />const
+            char *ssid = "";<br />
+            const char *password = "";<br />
+            <br />
+            void connectToWiFi()<br />
+            {<br />
+            &nbsp;Serial.begin(115200);<br />
+            &nbsp;WiFi.mode(WIFI_STA);<br />
+            &nbsp;WiFi.begin(ssid, password);<br />
+            &nbsp;Serial.print("Connecting to " + String(ssid) + ".");<br />
+            <br />
+            &nbsp;uint8_t i = 0;<br />
+            <br />
+            &nbsp;while (WiFi.status() != WL_CONNECTED)<br />
+            &nbsp;{<br />
+            <br />
+            &nbsp;&nbsp;delay(1000); // Pause for 1 second.<br />
+            <br />
+            &nbsp;&nbsp;if ((++i % 16) == 0)<br />
+            &nbsp;&nbsp;{<br />
+            &nbsp;&nbsp;&nbsp;Serial.println("\nCAN'T MAKE A CONNECTION, CHECK
+            YOUR SSID/PASSWORD!");<br />
+            &nbsp;&nbsp;&nbsp;Serial.print("Connecting to " + String(ssid) +
+            ".");<br />
+            &nbsp;&nbsp;&nbsp;i = 0;<br />
+            &nbsp;&nbsp;}<br />
+            &nbsp;&nbsp;else<br />
+            &nbsp;&nbsp;{<br />
+            &nbsp;&nbsp;&nbsp;Serial.print(".");<br />
+            &nbsp;&nbsp;}<br />
+            }<br />
+            <br />
+            &nbsp;Serial.print("\nCONNECTED! ");<br />
+            &nbsp;Serial.print(WiFi.localIP());<br />
+            &nbsp;Serial.println(" is your IP address.");<br />
+            }<br />
+            <br />
+            float previousPrice;<br />
+            uint8_t decimalPoint = 5; // Edit the decimal point here.<br />
+            <br />
+            void trackCrypto()<br />
+            {<br />
+            &nbsp;if (WiFi.status() == WL_CONNECTED)<br />
+            &nbsp;{<br />
+            &nbsp;&nbsp;HTTPClient http;<br />
+            <br />
+            &nbsp;&nbsp;// Visit https://www.cryptonator.com/api/currencies for
+            a list of supported currencies.<br />
+            &nbsp;&nbsp;// Edit the path below for the crypto you want to track.
+            Bitcoin is the default.<br />
+            <br />
+            &nbsp;&nbsp;String serverPath =
+            "https://api.cryptonator.com/api/ticker/btc-usd";<br />
+            <br />
+            &nbsp;&nbsp;http.begin(serverPath.c_str());<br />
+            &nbsp;&nbsp;int httpResponseCode = http.GET();<br />
+            <br />
+            &nbsp;&nbsp;if (httpResponseCode == 200)<br />
+            &nbsp;&nbsp;{<br />
+            &nbsp;&nbsp;&nbsp;Serial.println(previousPrice, decimalPoint);<br />
+            &nbsp;&nbsp;&nbsp;Serial.print("HTTP response code: ");<br />
+            &nbsp;&nbsp;&nbsp;Serial.println(httpResponseCode);<br />
+            &nbsp;&nbsp;&nbsp;String payload = http.getString();<br />
+            &nbsp;&nbsp;&nbsp;Serial.println(payload);<br />
+            <br />
+            &nbsp;&nbsp;&nbsp;String price = payload.substring(48, 56); //
+            Extracts the "price" string from JSON.<br />
+            &nbsp;&nbsp;&nbsp;float currentPrice = price.toFloat();<br />
+            &nbsp;&nbsp;&nbsp;Serial.println(currentPrice, decimalPoint);<br />
+            <br />
+            &nbsp;&nbsp;&nbsp;M5.Lcd.fillScreen(TFT_BLACK); // Clears the screen
+            before redrawing/updating.<br />
+            &nbsp;&nbsp;&nbsp;M5.Lcd.setTextColor(TFT_BLUE); // Edit the crypto
+            name color here.<br />
+            &nbsp;&nbsp;&nbsp;M5.Lcd.drawString("BITCOIN", 2, 4, 4); // Edit the
+            crypto name here.<br />
+            <br />
+            &nbsp;&nbsp;&nbsp;// Changes the price color according to the -/+
+            change.<br />
+            &nbsp;&nbsp;&nbsp;if (currentPrice <= previousPrice)<br />
+            &nbsp;&nbsp;&nbsp;{<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;M5.Lcd.setTextColor(TFT_RED);<br />
+            &nbsp;&nbsp;&nbsp;}<br />
+            &nbsp;&nbsp;&nbsp;else<br />
+            &nbsp;&nbsp;&nbsp;{<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;M5.Lcd.setTextColor(TFT_GREEN);<br />
+            &nbsp;&nbsp;&nbsp;}<br />
+            &nbsp;&nbsp;&nbsp;M5.Lcd.drawString(price, 2, 40, 4);<br />
+            &nbsp;&nbsp;&nbsp;previousPrice = currentPrice;<br />
+            &nbsp;&nbsp;}<br />
+            &nbsp;&nbsp;else<br />
+            &nbsp;&nbsp;{<br />
+            &nbsp;&nbsp;&nbsp;Serial.print("HTTP error code: ");<br />
+            &nbsp;&nbsp;&nbsp;Serial.println(httpResponseCode);<br />
+            &nbsp;&nbsp;}<br />
+            <br />
+            &nbsp;&nbsp;http.end();<br />
+            &nbsp;}<br />
+            }<br />
+            <br />
+            void setup(void)<br />
+            {<br />
+            &nbsp;M5.begin();<br />
+            &nbsp;M5.Lcd.setRotation(3); // Set the rotation of the display.<br />
+            &nbsp;connectToWiFi();<br />
+            &nbsp;trackCrypto();<br />
+            }<br />
+            <br />
+            unsigned long lastTime = 0;<br />
+            unsigned long timerDelay = 60000; // Update every 60 seconds.<br />
+            <br />
+            void loop()<br />
+            {<br />
+            &nbsp;if ((millis() - lastTime) > timerDelay)<br />
+            &nbsp;{<br />
+            &nbsp;&nbsp;trackCrypto();<br />
+            &nbsp;&nbsp;lastTime = millis();<br />
+            &nbsp;}<br />
+            }
+          </p>
+        </div>
+        <div class="post-col-right">
+          <div class="sticky">
+            <hr class="post-lines" />
+            <ul id="blog-posts">
+              <li>
+                <a href="/posts/blog/blog-index.html" class="post-links"
+                  ><strong>All blog posts</strong></a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <!-- <a
+            href="https://webring.xxiivv.com/#random"
+            rel="noopener"
+            target="_blank"
+            ><img
+              src="/images/webring.svg"
+              style="width: 28px; margin: 0"
+              alt="Webring"
+          /></a> -->
+        <a class="footer-links monospace" href="#top">Top</a>
+      </footer>
+    </div>
+    <!-- Main JavaScript link. -->
+    <script src="/scripts/main.js"></script>
+  </body>
+</html>

@@ -1,6 +1,6 @@
 // HOME [ START ]
 
-if (document.getElementById("home")) {
+if (document.getElementById("me-hero")) {
   // Hover over "me" color swap.
   document.getElementById("me").onmouseover = function () {
     meColor();

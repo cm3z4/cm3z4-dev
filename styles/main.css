@@ -71,7 +71,8 @@ a {
 
 #main-wrapper {
   max-width: 65%;
-  margin: 40px auto;
+  margin: 0 auto;
+  padding: 40px 0 10px 0;
 }
 
 .sections {
@@ -199,6 +200,17 @@ img {
 .sticky {
   position: sticky;
   top: 10px;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.footer-links {
+  font-size: 1.6rem;
+  margin-left: auto;
 }
 
 /* [Small Devices] */
