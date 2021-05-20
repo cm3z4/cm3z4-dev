@@ -19,16 +19,16 @@
       }
 
       #refresh {
-        color: #715ec1;
-        border: 2px solid #715ec1;
+        color: #7289da;
+        border: 2px solid #7289da;
         padding: 3px 6px;
         border-radius: 4px;
         cursor: pointer;
       }
 
       #refresh:hover {
-        color: #737373;
-        border: 2px solid #737373;
+        color: #99aab5;
+        border: 2px solid #99aab5;
         padding: 3px 6px;
         border-radius: 4px;
         cursor: pointer;
@@ -45,11 +45,25 @@
       .yellow {
         color: #f0f14e;
       }
+
+      .blue {
+        color: #01cdfe;
+      }
+
+      #header {
+        font-size: 0.4rem;
+      }
+
+      @media screen and (max-width: 600px) {
+        #header {
+          font-size: 0.35rem;
+        }
+      }
     </style>
     <!-- Custom CSS [ END ] -->
   </head>
   <body>
-    <pre class="pink" style="font-size: 0.4rem">
+    <pre class="pink" id="header">
  ██████╗██████╗ ██╗   ██╗██████╗ ████████╗██████╗  ██████╗ ███╗   ███╗ ██████╗ 
 ██╔════╝██╔══██╗╚██╗ ██╔╝██╔══██╗╚══██╔══╝██╔══██╗██╔═══██╗████╗ ████║██╔═══██╗
 ██║     ██████╔╝ ╚████╔╝ ██████╔╝   ██║   ██████╔╝██║   ██║██╔████╔██║██║   ██║
@@ -71,14 +85,30 @@
       <span id="refresh">Refresh</span>
     </p>
     <h2 id="current-price" class="green"></h2>
-    <p><input type="number" value="3" id="percent-input" class="inputs" /> %</p>
+    <p class="blue">
+      <input type="number" value="3" id="percent-input" class="inputs" /> %
+    </p>
     <p>Delta: <span id="delta-price" class="yellow"></span></p>
     <p>Target Price: <span id="target-price" class="yellow"></span></p>
     <p>
       Equity: <input type="text" value="500" id="equity-input" class="inputs" />
     </p>
-    <p>Profit: <span id="profit" class="yellow"></span></p>
-    <!-- <p>--------------<br />Precalculated<br />--------------</p> -->
+    <p>Profit: <span id="profit" class="pink"></span></p>
+    <p class="green">
+      --------------------------<br />Precalculated<br />--------------------------
+    </p>
+    <p class="blue">
+      3% <span id="3-target" class="yellow"></span>
+      <span id="3-profit" class="pink"></span>
+    </p>
+    <p class="blue">
+      5% <span id="5-target" class="yellow"></span>
+      <span id="5-profit" class="pink"></span>
+    </p>
+    <p class="blue">
+      7% <span id="7-target" class="yellow"></span>
+      <span id="7-profit" class="pink"></span>
+    </p>
     <!-- jQuery CDN -->
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -106,11 +136,23 @@
       function populateShit() {
         let percentInput = $("#percent-input").val() / 100;
         let deltaPrice = currentPrice * percentInput;
-        let targetPrice = currentPrice * percentInput + currentPrice;
         let equityInput = $("#equity-input").val();
+        let targetPrice = currentPrice * percentInput + currentPrice;
+        let targetPrice3P = currentPrice * 0.03 + currentPrice;
+        let targetPrice5P = currentPrice * 0.05 + currentPrice;
+        let targetPrice7P = currentPrice * 0.07 + currentPrice;
+        let profit3P = 0.03 * equityInput;
+        let profit5P = 0.05 * equityInput;
+        let profit7P = 0.07 * equityInput;
         $("#target-price").text(targetPrice);
         $("#delta-price").text(deltaPrice);
         $("#profit").text(percentInput * equityInput);
+        $("#3-target").text(targetPrice3P);
+        $("#5-target").text(targetPrice5P);
+        $("#7-target").text(targetPrice7P);
+        $("#3-profit").text(profit3P);
+        $("#5-profit").text(profit5P);
+        $("#7-profit").text(profit7P);
       }
 
       $("#percent-input").on("change", function () {
