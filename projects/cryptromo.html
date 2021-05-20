@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cryptromo</title>
+    <!-- Custom CSS [ START ] -->
+    <style>
+      body {
+        background-color: #282a36;
+        color: white;
+        font-size: 1.2rem;
+        font-family: monospace;
+      }
+
+      .inputs {
+        font-size: 1rem;
+      }
+
+      #refresh {
+        color: #715ec1;
+        border: 2px solid #715ec1;
+        padding: 3px 6px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      #refresh:hover {
+        color: #737373;
+        border: 2px solid #737373;
+        padding: 3px 6px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .pink {
+        color: #ff5f85;
+      }
+
+      .green {
+        color: #6ded8a;
+      }
+
+      .yellow {
+        color: #f0f14e;
+      }
+    </style>
+    <!-- Custom CSS [ END ] -->
+  </head>
+  <body>
+    <pre class="pink" style="font-size: 0.5rem">
+ ██████╗██████╗ ██╗   ██╗██████╗ ████████╗██████╗  ██████╗ ███╗   ███╗ ██████╗ 
+██╔════╝██╔══██╗╚██╗ ██╔╝██╔══██╗╚══██╔══╝██╔══██╗██╔═══██╗████╗ ████║██╔═══██╗
+██║     ██████╔╝ ╚████╔╝ ██████╔╝   ██║   ██████╔╝██║   ██║██╔████╔██║██║   ██║
+██║     ██╔══██╗  ╚██╔╝  ██╔═══╝    ██║   ██╔══██╗██║   ██║██║╚██╔╝██║██║   ██║
+╚██████╗██║  ██║   ██║   ██║        ██║   ██║  ██║╚██████╔╝██║ ╚═╝ ██║╚██████╔╝
+ ╚═════╝╚═╝  ╚═╝   ╚═╝   ╚═╝        ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝ ╚═════╝</pre
+    >
+    <!-- You can add more options/currencies below by going to https://www.cryptonator.com/api/currencies, just addit to the list below. -->
+    <p>
+      <select id="currency" class="inputs">
+        <option value="aave">Aave / AAVE</option>
+        <option selected value="btc">Bitcoin / BTC</option>
+        <option value="ada">Cardano / ADA</option>
+        <option value="doge">Dogecoin / DOGE</option>
+        <option value="eth">Ethereum / ETH</option>
+        <option value="etc">Ethereum Classic / ETC</option>
+        <option value="ltc">Lightcoin / LTC</option>
+      </select>
+      <span id="refresh">Refresh</span>
+    </p>
+    <h2 id="current-price" class="green"></h2>
+    <p><input type="number" value="3" id="percent-input" class="inputs" /> %</p>
+    <p>Delta: <span id="delta-price" class="yellow"></span></p>
+    <p>Target Price: <span id="target-price" class="yellow"></span></p>
+    <p>
+      Equity: <input type="text" value="500" id="equity-input" class="inputs" />
+    </p>
+    <p>Profit: <span id="profit" class="yellow"></span></p>
+    <!-- <p>--------------<br />Precalculated<br />--------------</p> -->
+    <!-- jQuery CDN -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      let selectCurrency;
+      let currentPrice;
+
+      function doWorkSon() {
+        selectCurrency = $("#currency").val();
+        console.log(selectCurrency);
+        $.ajax({
+          url: `https://api.cryptonator.com/api/full/${selectCurrency}-usd`,
+          success: function (data) {
+            console.log(data);
+            currentPrice = parseFloat(data.ticker.price);
+            $("#current-price").text(currentPrice);
+            populateShit();
+          },
+        });
+      }
+
+      function populateShit() {
+        let percentInput = $("#percent-input").val() / 100;
+        let deltaPrice = currentPrice * percentInput;
+        let targetPrice = currentPrice * percentInput + currentPrice;
+        let equityInput = $("#equity-input").val();
+        $("#target-price").text(targetPrice);
+        $("#delta-price").text(deltaPrice);
+        $("#profit").text(percentInput * equityInput);
+      }
+
+      $("#percent-input").on("change", function () {
+        populateShit();
+      });
+
+      $("#equity-input").on("change", function () {
+        populateShit();
+      });
+
+      $("#currency").on("change", function () {
+        doWorkSon();
+      });
+
+      $("#refresh").on("click", function () {
+        doWorkSon();
+      });
+
+      doWorkSon();
+    </script>
+  </body>
+</html>
