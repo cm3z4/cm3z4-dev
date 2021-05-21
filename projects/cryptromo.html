@@ -14,11 +14,19 @@
         font-family: monospace;
       }
 
+      #wrapper {
+        display: flex;
+      }
+
+      .cols {
+        width: 33.33%;
+      }
+
       .inputs {
         font-size: 1rem;
       }
 
-      #refresh {
+      .buttons {
         color: #7289da;
         border: 2px solid #7289da;
         padding: 3px 6px;
@@ -26,7 +34,7 @@
         cursor: pointer;
       }
 
-      #refresh:hover {
+      .buttons:hover {
         color: #99aab5;
         border: 2px solid #99aab5;
         padding: 3px 6px;
@@ -58,57 +66,92 @@
         #header {
           font-size: 8px;
         }
+
+        #wrapper {
+          flex-direction: column;
+        }
+
+        .cols {
+          width: 100%;
+        }
       }
     </style>
     <!-- Custom CSS [ END ] -->
   </head>
   <body>
-    <pre class="pink" id="header">
+    <div id="wrapper">
+      <div class="cols">
+        <pre class="pink" id="header">
  ██████╗██████╗ ██╗   ██╗██████╗ ████████╗██████╗  ██████╗ ███╗   ███╗ ██████╗ 
 ██╔════╝██╔══██╗╚██╗ ██╔╝██╔══██╗╚══██╔══╝██╔══██╗██╔═══██╗████╗ ████║██╔═══██╗
 ██║     ██████╔╝ ╚████╔╝ ██████╔╝   ██║   ██████╔╝██║   ██║██╔████╔██║██║   ██║
 ██║     ██╔══██╗  ╚██╔╝  ██╔═══╝    ██║   ██╔══██╗██║   ██║██║╚██╔╝██║██║   ██║
 ╚██████╗██║  ██║   ██║   ██║        ██║   ██║  ██║╚██████╔╝██║ ╚═╝ ██║╚██████╔╝
  ╚═════╝╚═╝  ╚═╝   ╚═╝   ╚═╝        ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝ ╚═════╝</pre
-    >
-    <!-- You can add more options/currencies below by going to https://www.cryptonator.com/api/currencies, just addit to the list below. -->
-    <p>
-      <select id="currency" class="inputs">
-        <option value="aave">Aave / AAVE</option>
-        <option selected value="btc">Bitcoin / BTC</option>
-        <option value="ada">Cardano / ADA</option>
-        <option value="doge">Dogecoin / DOGE</option>
-        <option value="eth">Ethereum / ETH</option>
-        <option value="etc">Ethereum Classic / ETC</option>
-        <option value="ltc">Lightcoin / LTC</option>
-      </select>
-      <span id="refresh">Refresh</span>
-    </p>
-    <h2 id="current-price" class="green"></h2>
-    <p class="blue">
-      <input type="number" value="3" id="percent-input" class="inputs" /> %
-    </p>
-    <p>Delta: <span id="delta-price" class="yellow"></span></p>
-    <p>Target Price: <span id="target-price" class="yellow"></span></p>
-    <p>
-      Equity: <input type="text" value="500" id="equity-input" class="inputs" />
-    </p>
-    <p>Profit: <span id="profit" class="pink"></span></p>
-    <p class="green">
-      --------------------------<br />Precalculated<br />--------------------------
-    </p>
-    <p class="blue">
-      3% <span id="3-target" class="yellow"></span>
-      <span id="3-profit" class="pink"></span>
-    </p>
-    <p class="blue">
-      5% <span id="5-target" class="yellow"></span>
-      <span id="5-profit" class="pink"></span>
-    </p>
-    <p class="blue">
-      7% <span id="7-target" class="yellow"></span>
-      <span id="7-profit" class="pink"></span>
-    </p>
+        >
+        <!-- You can add more options/currencies below by going to https://www.cryptonator.com/api/currencies, just addit to the list below. -->
+        <p>
+          <select id="currency" class="inputs">
+            <option value="aave">Aave / AAVE</option>
+            <option selected value="btc">Bitcoin / BTC</option>
+            <option value="ada">Cardano / ADA</option>
+            <option value="doge">Dogecoin / DOGE</option>
+            <option value="eth">Ethereum / ETH</option>
+            <option value="etc">Ethereum Classic / ETC</option>
+            <option value="ltc">Lightcoin / LTC</option>
+            <option value="xmr">Monero / XMR</option>
+          </select>
+          <span id="refresh" class="buttons">Refresh</span>
+        </p>
+        <h2 id="current-price" class="green"></h2>
+        <p class="blue">
+          <input type="number" value="3" id="percent-input" class="inputs" /> %
+        </p>
+        <p>Delta: <span id="delta-price" class="yellow"></span></p>
+        <p>Target Price: <span id="target-price" class="yellow"></span></p>
+        <p>
+          Equity:
+          <input type="text" value="500" id="equity-input" class="inputs" />
+        </p>
+        <p>Profit: <span id="profit" class="pink"></span></p>
+        <p class="green">
+          --------------------------<br />Precalculated<br />--------------------------
+        </p>
+        <p class="blue">
+          3% <span id="3-target" class="yellow"></span>
+          <span id="3-profit" class="pink"></span>
+        </p>
+        <p class="blue">
+          5% <span id="5-target" class="yellow"></span>
+          <span id="5-profit" class="pink"></span>
+        </p>
+        <p class="blue">
+          7% <span id="7-target" class="yellow"></span>
+          <span id="7-profit" class="pink"></span>
+        </p>
+      </div>
+
+      <div class="cols">
+        <p class="green">
+          --------------------------<br />Delta Tools<br />--------------------------
+        </p>
+        <p id="delta-c-sol" class="yellow">0</p>
+        <p>
+          What is <input type="number" value="2" id="delta-c-1a" /><span
+            class="inputs blue"
+          >
+            %</span
+          >
+          of<br /><br /><input
+            type="text"
+            id="delta-c-1b"
+            value="1000"
+            class="inputs"
+          />
+          ? <span id="delta-1-clear" class="buttons">Clear</span>
+        </p>
+      </div>
+    </div>
     <!-- jQuery CDN -->
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -169,6 +212,22 @@
 
       $("#refresh").on("click", function () {
         doWorkSon();
+      });
+
+      // Delta 1 section.
+      $("#delta-c-1a, #delta-c-1b").on("change", function () {
+        $("#delta-c-sol").text(
+          ($("#delta-c-1a").val() / 100) * $("#delta-c-1b").val()
+        );
+      });
+
+      $("#delta-c-sol").text(
+        ($("#delta-c-1a").val() / 100) * $("#delta-c-1b").val()
+      );
+
+      $("#delta-1-clear").on("click", function () {
+        $("#delta-c-1a").val("");
+        $("#delta-c-1b").val("");
       });
 
       doWorkSon();
