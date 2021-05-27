@@ -24,6 +24,7 @@
 
       .inputs {
         font-size: 1rem;
+        width: 35%;
       }
 
       .buttons {
@@ -93,6 +94,7 @@
         <p>
           <select id="currency" class="inputs">
             <option value="aave">Aave / AAVE</option>
+            <option selected value="bat">Basic Attention Token / BAT</option>
             <option selected value="btc">Bitcoin / BTC</option>
             <option value="ada">Cardano / ADA</option>
             <option value="doge">Dogecoin / DOGE</option>
@@ -100,6 +102,7 @@
             <option value="etc">Ethereum Classic / ETC</option>
             <option value="ltc">Lightcoin / LTC</option>
             <option value="xmr">Monero / XMR</option>
+            <option value="matic">Polygon / MATIC</option>
           </select>
           <span id="refresh" class="buttons">Refresh</span>
         </p>
@@ -133,23 +136,42 @@
 
       <div class="cols">
         <p class="green">
-          --------------------------<br />Delta Tools<br />--------------------------
+          --------------------------<br />Calc Tools<br />--------------------------
         </p>
-        <p id="delta-c-sol" class="yellow">0</p>
+        <!-- Calc Tool #1 [ START ] -->
+        <p id="calc1-sol" class="yellow">0</p>
         <p>
-          What is <input type="number" value="2" id="delta-c-1a" /><span
-            class="inputs blue"
+          What is
+          <input type="number" value="2" id="calc1-v1" class="inputs" /><span
+            class="blue"
           >
             %</span
           >
           of<br /><br /><input
             type="text"
-            id="delta-c-1b"
+            id="calc1-v2"
             value="1000"
             class="inputs"
           />
-          ? <span id="delta-1-clear" class="buttons">Clear</span>
+          ? <span id="calc1-clear" class="buttons">Clear</span>
         </p>
+        <!-- Calc Tool #1 [ END ] -->
+
+        <!-- Calc Tool #2 [ START ] -->
+        <p class="yellow">
+          <span id="calc2-sol">0</span> <span class="blue"> %</span>
+        </p>
+        <p>
+          <input type="number" value="25" id="calc2-v1" class="inputs" /> is
+          what<span class="blue"> %</span> of<br /><br /><input
+            type="text"
+            id="calc2-v2"
+            value="622"
+            class="inputs"
+          />
+          ? <span id="calc2-clear" class="buttons">Clear</span>
+        </p>
+        <!-- Calc Tool #2 [ END ] -->
       </div>
     </div>
     <!-- jQuery CDN -->
@@ -214,21 +236,43 @@
         doWorkSon();
       });
 
-      // Delta 1 section.
-      $("#delta-c-1a, #delta-c-1b").on("change", function () {
-        $("#delta-c-sol").text(
-          ($("#delta-c-1a").val() / 100) * $("#delta-c-1b").val()
+      // Calc Tools #1 [ Start ].
+      $("#calc1-v1, #calc1-v2").on("change", function () {
+        $("#calc1-sol").text(
+          ($("#calc1-v1").val() / 100) * $("#calc1-v2").val()
         );
+        if ($("#calc1-sol").text() === "NaN") {
+          $("#calc1-sol").text("Numbers & decimal points only!");
+        }
       });
 
-      $("#delta-c-sol").text(
-        ($("#delta-c-1a").val() / 100) * $("#delta-c-1b").val()
-      );
+      $("#calc1-sol").text(($("#calc1-v1").val() / 100) * $("#calc1-v2").val());
 
-      $("#delta-1-clear").on("click", function () {
-        $("#delta-c-1a").val("");
-        $("#delta-c-1b").val("");
+      $("#calc1-clear").on("click", function () {
+        $("#calc1-sol").text("0");
+        $("#calc1-v1").val("");
+        $("#calc1-v2").val("");
       });
+      // Calc Tools #1 [ END ].
+
+      // Calc Tools #2 [ Start ].
+      $("#calc2-v1, #calc2-v2").on("change", function () {
+        $("#calc2-sol").text(
+          ($("#calc2-v1").val() / $("#calc2-v2").val()) * 100
+        );
+        if ($("#calc2-sol").text() === "NaN") {
+          $("#calc2-sol").text("Numbers & decimal points only!");
+        }
+      });
+
+      $("#calc2-sol").text(($("#calc2-v1").val() / $("#calc2-v2").val()) * 100);
+
+      $("#calc2-clear").on("click", function () {
+        $("#calc2-sol").text("0");
+        $("#calc2-v1").val("");
+        $("#calc2-v2").val("");
+      });
+      // Calc Tools #2 [ END ].
 
       doWorkSon();
     </script>
