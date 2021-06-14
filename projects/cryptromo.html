@@ -66,6 +66,14 @@
         color: #01cdfe;
       }
 
+      .red {
+        color: #ed3833;
+      }
+
+      .orange {
+        color: #ff895f;
+      }
+
       #header {
         font-size: 0.4rem;
       }
@@ -188,6 +196,16 @@
         </p>
         <!-- Calc Tool #2 [ END ] -->
       </div>
+
+      <div class="cols">
+        <p class="green">
+          --------------------------<br />News & Info<br />--------------------------
+        </p>
+        <!-- Fear & Greed Index API [ START ] -->
+        <p style="font-weight: bold">Fear & Greed Index</p>
+        <div id="fgi-wrapper"></div>
+        <!-- Fear and Greed Index API [ END ] -->
+      </div>
     </div>
     <!-- jQuery CDN -->
     <script
@@ -201,14 +219,53 @@
 
       function doWorkSon() {
         selectCurrency = $("#currency").val();
-        console.log(selectCurrency);
+        // console.log(selectCurrency);
         $.ajax({
           url: `https://api.cryptonator.com/api/full/${selectCurrency}-usd`,
           success: function (data) {
-            console.log(data);
+            // console.log(data);
             currentPrice = parseFloat(data.ticker.price);
             $("#current-price").text(currentPrice);
             populateShit();
+          },
+        });
+
+        // Fear and Greed Index - API REQUEST
+        $.ajax({
+          url: "https://api.alternative.me/fng/?limit=10&format=json&date_format=us",
+          success: function (fgi) {
+            let fgiIndex = fgi.data;
+            // console.log(fgiIndex);
+            for (let i = 0; i < fgi.data.length; i++) {
+              // console.log(fgi.data[i]);
+
+              switch (fgiIndex[i].value_classification) {
+                case "Extreme Greed":
+                  $("#fgi-wrapper").append(
+                    `<p><span class="green">${fgiIndex[i].value_classification}</span> | <span class="yellow">${fgiIndex[i].value}</span> | <span class="blue">${fgiIndex[i].timestamp}</span></p>`
+                  );
+                  break;
+                case "Neutral":
+                  $("#fgi-wrapper").append(
+                    `<p><span class="yellow">${fgiIndex[i].value_classification}</span> | <span class="yellow">${fgiIndex[i].value}</span> | <span class="blue">${fgiIndex[i].timestamp}</span></p>`
+                  );
+                  break;
+                case "Fear":
+                  $("#fgi-wrapper").append(
+                    `<p><span class="orange">${fgiIndex[i].value_classification}</span> | <span class="yellow">${fgiIndex[i].value}</span> | <span class="blue">${fgiIndex[i].timestamp}</span></p>`
+                  );
+                  break;
+                case "Extreme Fear":
+                  $("#fgi-wrapper").append(
+                    `<p><span class="red">${fgiIndex[i].value_classification}</span> | <span class="yellow">${fgiIndex[i].value}</span> | <span class="blue">${fgiIndex[i].timestamp}</span></p>`
+                  );
+                  break;
+                default:
+                  $("#fgi-wrapper").append(
+                    `<p><span class="">${fgiIndex[i].value_classification}</span> | <span class="yellow">${fgiIndex[i].value}</span> | <span class="blue">${fgiIndex[i].timestamp}</span></p>`
+                  );
+              }
+            }
           },
         });
       }
