@@ -234,6 +234,7 @@
         $.ajax({
           url: "https://api.alternative.me/fng/?limit=10&format=json&date_format=us",
           success: function (fgi) {
+            $("#fgi-wrapper").empty();
             let fgiIndex = fgi.data;
             // console.log(fgiIndex);
             for (let i = 0; i < fgi.data.length; i++) {
