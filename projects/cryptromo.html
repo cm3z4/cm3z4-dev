@@ -243,27 +243,27 @@
               switch (fgiIndex[i].value_classification) {
                 case "Extreme Greed":
                   $("#fgi-wrapper").append(
-                    `<p><span class="green">${fgiIndex[i].value_classification}</span> | <span class="yellow">${fgiIndex[i].value}</span> | <span class="blue">${fgiIndex[i].timestamp}</span></p>`
+                    `<p><span class="blue">${fgiIndex[i].timestamp}</span> | <span class="yellow">${fgiIndex[i].value}</span> | <span class="green">${fgiIndex[i].value_classification}</span></p>`
                   );
                   break;
                 case "Neutral":
                   $("#fgi-wrapper").append(
-                    `<p><span class="yellow">${fgiIndex[i].value_classification}</span> | <span class="yellow">${fgiIndex[i].value}</span> | <span class="blue">${fgiIndex[i].timestamp}</span></p>`
+                    `<p><span class="blue">${fgiIndex[i].timestamp}</span> | <span class="yellow">${fgiIndex[i].value}</span> | <span class="yellow">${fgiIndex[i].value_classification}</span></p>`
                   );
                   break;
                 case "Fear":
                   $("#fgi-wrapper").append(
-                    `<p><span class="orange">${fgiIndex[i].value_classification}</span> | <span class="yellow">${fgiIndex[i].value}</span> | <span class="blue">${fgiIndex[i].timestamp}</span></p>`
+                    `<p><span class="blue">${fgiIndex[i].timestamp}</span> | <span class="yellow">${fgiIndex[i].value}</span> | <span class="orange">${fgiIndex[i].value_classification}</span></p>`
                   );
                   break;
                 case "Extreme Fear":
                   $("#fgi-wrapper").append(
-                    `<p><span class="red">${fgiIndex[i].value_classification}</span> | <span class="yellow">${fgiIndex[i].value}</span> | <span class="blue">${fgiIndex[i].timestamp}</span></p>`
+                    `<p><span class="blue">${fgiIndex[i].timestamp}</span> | <span class="yellow">${fgiIndex[i].value}</span> | <span class="red">${fgiIndex[i].value_classification}</span></p>`
                   );
                   break;
                 default:
                   $("#fgi-wrapper").append(
-                    `<p><span class="">${fgiIndex[i].value_classification}</span> | <span class="yellow">${fgiIndex[i].value}</span> | <span class="blue">${fgiIndex[i].timestamp}</span></p>`
+                    `<p><span class="blue">${fgiIndex[i].timestamp}</span> | <span class="yellow">${fgiIndex[i].value}</span> | <span class="">${fgiIndex[i].value_classification}</span></p>`
                   );
               }
             }
