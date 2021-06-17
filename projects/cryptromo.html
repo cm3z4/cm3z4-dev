@@ -182,7 +182,7 @@
 
         <!-- Calc Tool #2 [ START ] -->
         <p class="yellow">
-          <span id="calc2-sol">0</span> <span class="blue"> %</span>
+          <span id="calc2-sol">0</span><span class="blue"> %</span>
         </p>
         <p>
           <input type="text" value="25" id="calc2-v1" class="inputs" /> is
@@ -195,6 +195,24 @@
           ? <span id="calc2-clear" class="buttons">Clear</span>
         </p>
         <!-- Calc Tool #2 [ END ] -->
+
+        <!-- Calc Tool #3 [ START ] -->
+        <p class="yellow">
+          <span id="calc3-sol">0</span><span class="blue"> %</span>
+        </p>
+        <p>
+          What is the<span class="blue"> %</span> gain/loss<br /><br />
+          from
+          <input
+            type="text"
+            value="25"
+            id="calc3-v1"
+            class="inputs"
+          /><br /><br />
+          to <input type="text" id="calc3-v2" value="622" class="inputs" /> ?
+          <span id="calc3-clear" class="buttons">Clear</span>
+        </p>
+        <!-- Calc Tool #3 [ END ] -->
       </div>
 
       <div class="cols">
@@ -346,6 +364,30 @@
         $("#calc2-v2").val("");
       });
       // Calc Tools #2 [ END ].
+
+      // Calc Tools #3 [ Start ].
+      $("#calc3-v1, #calc3-v2").on("change", function () {
+        $("#calc3-sol").text(
+          (($("#calc3-v2").val() - $("#calc3-v1").val()) /
+            $("#calc3-v1").val()) *
+            100
+        );
+        if ($("#calc3-sol").text() === "NaN") {
+          $("#calc3-sol").text("Numbers & decimal points only!");
+        }
+      });
+
+      $("#calc3-sol").text(
+        (($("#calc3-v2").val() - $("#calc3-v1").val()) / $("#calc3-v1").val()) *
+          100
+      );
+
+      $("#calc3-clear").on("click", function () {
+        $("#calc3-sol").text("0");
+        $("#calc3-v1").val("");
+        $("#calc3-v2").val("");
+      });
+      // Calc Tools #3 [ END ].
 
       doWorkSon();
     </script>
