@@ -179,13 +179,13 @@
         </p>
         <h2 id="current-price" class="green"></h2>
         <p class="blue">
-          <input type="number" value="3" id="percent-input" class="inputs" /> %
+          <input type="number" value="1" id="percent-input" class="inputs" /> %
         </p>
         <p>Delta: <span id="delta-price" class="yellow"></span></p>
         <p>Target Price: <span id="target-price" class="yellow"></span></p>
         <p>
           Equity:
-          <input type="text" value="500" id="equity-input" class="inputs" />
+          <input type="text" value="1000" id="equity-input" class="inputs" />
         </p>
         <p>Profit: <span id="profit" class="pink"></span></p>
         <p class="green">
@@ -291,7 +291,7 @@
           success: function (data) {
             // console.log(data);
             currentPrice = parseFloat(data.ticker.price);
-            $("#current-price").text(currentPrice);
+            $("#current-price").text(parseFloat(currentPrice).toFixed(8));
             populateShit();
           },
         });
@@ -339,18 +339,26 @@
 
       function populateShit() {
         let percentInput = $("#percent-input").val() / 100;
-        let deltaPrice = currentPrice * percentInput;
+        let deltaPrice = parseFloat(currentPrice * percentInput).toFixed(8);
         let equityInput = $("#equity-input").val();
-        let targetPrice = currentPrice * percentInput + currentPrice;
-        let targetPrice3P = currentPrice * 0.03 + currentPrice;
-        let targetPrice5P = currentPrice * 0.05 + currentPrice;
-        let targetPrice7P = currentPrice * 0.07 + currentPrice;
-        let profit3P = 0.03 * equityInput;
-        let profit5P = 0.05 * equityInput;
-        let profit7P = 0.07 * equityInput;
+        let targetPrice = parseFloat(
+          currentPrice * percentInput + currentPrice
+        ).toFixed(8);
+        let targetPrice3P = parseFloat(
+          currentPrice * 0.03 + currentPrice
+        ).toFixed(8);
+        let targetPrice5P = parseFloat(
+          currentPrice * 0.05 + currentPrice
+        ).toFixed(8);
+        let targetPrice7P = parseFloat(
+          currentPrice * 0.07 + currentPrice
+        ).toFixed(8);
+        let profit3P = parseFloat(0.03 * equityInput).toFixed(2);
+        let profit5P = parseFloat(0.05 * equityInput).toFixed(2);
+        let profit7P = parseFloat(0.07 * equityInput).toFixed(2);
         $("#target-price").text(targetPrice);
         $("#delta-price").text(deltaPrice);
-        $("#profit").text(percentInput * equityInput);
+        $("#profit").text(parseFloat(percentInput * equityInput).toFixed(2));
         $("#3-target").text(targetPrice3P);
         $("#5-target").text(targetPrice5P);
         $("#7-target").text(targetPrice7P);
