@@ -154,6 +154,11 @@ img {
   margin: 1rem;
 }
 
+#status {
+  font-size: 1.4rem;
+  margin: 1rem;
+}
+
 .section-headers {
   font-size: 2rem;
 }
