@@ -1,22 +1,22 @@
 // HOME [ START ]
 
 if (document.getElementById("me-hero")) {
-  // Hover over "me" color swap.
+  // Hover over "me" monochrome swap.
   document.getElementById("me").onmouseover = function () {
-    meColor();
-  };
-
-  function meColor() {
-    document.getElementById("me").src = "/images/arr/me-color.png";
-  }
-
-  // Hover out "me" monochrome swap.
-  document.getElementById("me").onmouseout = function () {
     meMono();
   };
 
   function meMono() {
     document.getElementById("me").src = "/images/arr/me-mono.png";
+  }
+
+  // Hover out "me" color swap.
+  document.getElementById("me").onmouseout = function () {
+    meColor();
+  };
+
+  function meColor() {
+    document.getElementById("me").src = "/images/arr/me-color.png";
   }
 }
 
