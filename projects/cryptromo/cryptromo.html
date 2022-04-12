@@ -1,453 +1,403 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>cm3z4 — Cryptromo</title>
-    <link rel="canonical" href="https://cm3z4.dev/" />
-    <!-- Favicons -->
-    <link rel="shortcut icon" href="favicon.png" type="image/png" />
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="images/favicons/apple-touch-icon.png" />
-    <link
-      rel="apple-touch-icon"
-      sizes="57x57"
-      href="images/favicons/apple-touch-icon-57x57.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="72x72"
-      href="images/favicons/apple-touch-icon-72x72.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="76x76"
-      href="images/favicons/apple-touch-icon-72x72.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="114x114"
-      href="images/favicons/apple-touch-icon-114x114.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="120x120"
-      href="images/favicons/apple-touch-icon-120x120.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="144x144"
-      href="images/favicons/apple-touch-icon-144x144.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="152x152"
-      href="images/favicons/apple-touch-icon-152x152.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="images/favicons/apple-touch-icon-180x180.png"
-    />
 
-    <!-- Custom CSS [ START ] -->
-    <style>
-      body {
-        background-color: #282a36;
-        color: white;
-        font-size: 1.2rem;
-        font-family: monospace;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>cm3z4 — Cryptromo</title>
+  <link rel="canonical" href="https://cm3z4.dev/" />
+  <!-- Favicons -->
+  <link rel="shortcut icon" href="favicon.png" type="image/png" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="images/favicons/apple-touch-icon.png" />
+  <link rel="apple-touch-icon" sizes="57x57" href="images/favicons/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="images/favicons/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="images/favicons/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="images/favicons/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="images/favicons/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="images/favicons/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="images/favicons/apple-touch-icon-152x152.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon-180x180.png" />
+
+  <!-- Custom CSS [ START ] -->
+  <style>
+    body {
+      background-color: #282a36;
+      color: white;
+      font-size: 1.2rem;
+      font-family: monospace;
+    }
+
+    #wrapper {
+      display: flex;
+    }
+
+    .cols {
+      width: 33.33%;
+    }
+
+    #currency {
+      font-size: 1rem;
+      font-family: monospace;
+      padding: 1px 2px;
+    }
+
+    .inputs {
+      font-size: 1rem;
+      width: 45%;
+      padding: 1px 2px;
+    }
+
+    .buttons {
+      color: #7289da;
+      border: 2px solid #7289da;
+      padding: 3px 6px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .buttons:hover {
+      color: #99aab5;
+      border: 2px solid #99aab5;
+      padding: 3px 6px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .pink {
+      color: #ff5f85;
+    }
+
+    .green {
+      color: #6ded8a;
+    }
+
+    .yellow {
+      color: #f0f14e;
+    }
+
+    .blue {
+      color: #01cdfe;
+    }
+
+    .red {
+      color: #ed3833;
+    }
+
+    .orange {
+      color: #ff895f;
+    }
+
+    #header {
+      font-size: 0.4rem;
+    }
+
+    @media screen and (max-width: 600px) {
+      #header {
+        font-size: 6px;
       }
 
       #wrapper {
-        display: flex;
+        flex-direction: column;
       }
 
       .cols {
-        width: 33.33%;
+        width: 100%;
       }
 
-      #currency {
-        font-size: 1rem;
-        font-family: monospace;
-        padding: 1px 2px;
+      #refresh {
+        margin-top: 20px;
+        display: inline-block;
       }
+    }
+  </style>
+  <!-- Custom CSS [ END ] -->
+</head>
 
-      .inputs {
-        font-size: 1rem;
-        width: 45%;
-        padding: 1px 2px;
-      }
-
-      .buttons {
-        color: #7289da;
-        border: 2px solid #7289da;
-        padding: 3px 6px;
-        border-radius: 4px;
-        cursor: pointer;
-      }
-
-      .buttons:hover {
-        color: #99aab5;
-        border: 2px solid #99aab5;
-        padding: 3px 6px;
-        border-radius: 4px;
-        cursor: pointer;
-      }
-
-      .pink {
-        color: #ff5f85;
-      }
-
-      .green {
-        color: #6ded8a;
-      }
-
-      .yellow {
-        color: #f0f14e;
-      }
-
-      .blue {
-        color: #01cdfe;
-      }
-
-      .red {
-        color: #ed3833;
-      }
-
-      .orange {
-        color: #ff895f;
-      }
-
-      #header {
-        font-size: 0.4rem;
-      }
-
-      @media screen and (max-width: 600px) {
-        #header {
-          font-size: 6px;
-        }
-
-        #wrapper {
-          flex-direction: column;
-        }
-
-        .cols {
-          width: 100%;
-        }
-
-        #refresh {
-          margin-top: 20px;
-          display: inline-block;
-        }
-      }
-    </style>
-    <!-- Custom CSS [ END ] -->
-  </head>
-  <body>
-    <div id="wrapper">
-      <div class="cols">
-        <pre class="pink" id="header">
+<body>
+  <div id="wrapper">
+    <div class="cols">
+      <pre class="pink" id="header">
  ██████╗██████╗ ██╗   ██╗██████╗ ████████╗██████╗  ██████╗ ███╗   ███╗ ██████╗ 
 ██╔════╝██╔══██╗╚██╗ ██╔╝██╔══██╗╚══██╔══╝██╔══██╗██╔═══██╗████╗ ████║██╔═══██╗
 ██║     ██████╔╝ ╚████╔╝ ██████╔╝   ██║   ██████╔╝██║   ██║██╔████╔██║██║   ██║
 ██║     ██╔══██╗  ╚██╔╝  ██╔═══╝    ██║   ██╔══██╗██║   ██║██║╚██╔╝██║██║   ██║
 ╚██████╗██║  ██║   ██║   ██║        ██║   ██║  ██║╚██████╔╝██║ ╚═╝ ██║╚██████╔╝
- ╚═════╝╚═╝  ╚═╝   ╚═╝   ╚═╝        ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝ ╚═════╝</pre
-        >
-        <!-- You can add more options/currencies below by going to https://www.cryptonator.com/api/currencies, just addit to the list below. -->
-        <p>
-          <select id="currency">
-            <option value="aave">Aave / AAVE</option>
-            <option selected value="bat">Basic Attention Token / BAT</option>
-            <option selected value="btc">Bitcoin / BTC</option>
-            <option value="ada">Cardano / ADA</option>
-            <option value="dash">Dash / DASH</option>
-            <option value="doge">Dogecoin / DOGE</option>
-            <option value="eth">Ethereum / ETH</option>
-            <option value="etc">Ethereum Classic / ETC</option>
-            <option value="icp">Internet Computer / ICP</option>
-            <option value="ksm">Kusama / KSM</option>
-            <option value="ltc">Litecoin / LTC</option>
-            <option value="xmr">Monero / XMR</option>
-            <option value="paxg">PAX Gold / PAXG</option>
-            <option value="dot">Polkadot / DOT</option>
-            <option value="matic">Polygon / MATIC</option>
-            <option value="shib">Shiba Inu / SHIB</option>
-            <option value="sol">Solana / SOL</option>
-            <option value="trx">TRON / TRX</option>
-          </select>
-          <span id="refresh" class="buttons">Refresh</span>
-        </p>
-        <h2 id="current-price" class="green"></h2>
-        <p class="blue">
-          <input type="number" value="1" id="percent-input" class="inputs" /> %
-        </p>
-        <p>Delta: <span id="delta-price" class="yellow"></span></p>
-        <p>Target Price: <span id="target-price" class="yellow"></span></p>
-        <p>
-          Equity:
-          <input type="text" value="1000" id="equity-input" class="inputs" />
-        </p>
-        <p>Profit: <span id="profit" class="pink"></span></p>
-        <p class="green">
-          --------------------------<br />Precalculated<br />--------------------------
-        </p>
-        <p class="blue">
-          3% <span id="3-target" class="yellow"></span>
-          <span id="3-profit" class="pink"></span>
-        </p>
-        <p class="blue">
-          5% <span id="5-target" class="yellow"></span>
-          <span id="5-profit" class="pink"></span>
-        </p>
-        <p class="blue">
-          7% <span id="7-target" class="yellow"></span>
-          <span id="7-profit" class="pink"></span>
-        </p>
-      </div>
-
-      <div class="cols">
-        <p class="green">
-          --------------------------<br />Calc Tools<br />--------------------------
-        </p>
-        <!-- Calc Tool #1 [ START ] -->
-        <p id="calc1-sol" class="yellow">0</p>
-        <p>
-          What is
-          <input type="number" value="2" id="calc1-v1" class="inputs" /><span
-            class="blue"
-          >
-            %</span
-          >
-          of<br /><br /><input
-            type="text"
-            id="calc1-v2"
-            value="1000"
-            class="inputs"
-          />
-          ? <span id="calc1-clear" class="buttons">Clear</span>
-        </p>
-        <!-- Calc Tool #1 [ END ] -->
-
-        <!-- Calc Tool #2 [ START ] -->
-        <p class="yellow">
-          <span id="calc2-sol">0</span><span class="blue"> %</span>
-        </p>
-        <p>
-          <input type="text" value="25" id="calc2-v1" class="inputs" /> is
-          what<span class="blue"> %</span> of<br /><br /><input
-            type="text"
-            id="calc2-v2"
-            value="622"
-            class="inputs"
-          />
-          ? <span id="calc2-clear" class="buttons">Clear</span>
-        </p>
-        <!-- Calc Tool #2 [ END ] -->
-
-        <!-- Calc Tool #3 [ START ] -->
-        <p class="yellow">
-          <span id="calc3-sol">0</span><span class="blue"> %</span>
-        </p>
-        <p>
-          What is the<span class="blue"> %</span> gain/loss<br /><br />
-          from
-          <input
-            type="text"
-            value="25"
-            id="calc3-v1"
-            class="inputs"
-          /><br /><br />
-          to <input type="text" id="calc3-v2" value="622" class="inputs" /> ?
-          <span id="calc3-clear" class="buttons">Clear</span>
-        </p>
-        <!-- Calc Tool #3 [ END ] -->
-      </div>
-
-      <div class="cols">
-        <p class="green">
-          --------------------------<br />News & Info<br />--------------------------
-        </p>
-        <!-- Fear & Greed Index API [ START ] -->
-        <p style="font-weight: bold">Fear & Greed Index</p>
-        <div id="fgi-wrapper"></div>
-        <!-- Fear and Greed Index API [ END ] -->
-      </div>
+ ╚═════╝╚═╝  ╚═╝   ╚═╝   ╚═╝        ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝ ╚═════╝</pre>
+      <!-- You can add more options/currencies below by going to https://www.cryptonator.com/api/currencies, just add it to the list below. -->
+      <p>
+        <select id="currency">
+          <option value="aave">Aave / AAVE</option>
+          <option selected value="basic-attention-token">Basic Attention Token / BAT</option>
+          <option selected value="bitcoin">Bitcoin / BTC</option>
+          <option value="cardano">Cardano / ADA</option>
+          <option value="dash">Dash / DASH</option>
+          <option value="dogecoin">Dogecoin / DOGE</option>
+          <option value="ethereum">Ethereum / ETH</option>
+          <option value="ethereum-classic">Ethereum Classic / ETC</option>
+          <option value="floki-inu">Floki Inu / FLOKI</option>
+          <option value="internet-computer">Internet Computer / ICP</option>
+          <option value="kusama">Kusama / KSM</option>
+          <option value="litecoin">Litecoin / LTC</option>
+          <option value="monero">Monero / XMR</option>
+          <option value="pax-gold">PAX Gold / PAXG</option>
+          <option value="polkadot">Polkadot / DOT</option>
+          <option value="matic-network">Polygon / MATIC</option>
+          <option value="shiba-inu">Shiba Inu / SHIB</option>
+          <option value="solana">Solana / SOL</option>
+          <option value="tron">TRON / TRX</option>
+        </select>
+        <span id="refresh" class="buttons">Refresh</span>
+      </p>
+      <h2 id="current-price" class="green"></h2>
+      <p class="blue">
+        <input type="number" value="1" id="percent-input" class="inputs" /> %
+      </p>
+      <p>Delta: <span id="delta-price" class="yellow"></span></p>
+      <p>Target Price: <span id="target-price" class="yellow"></span></p>
+      <p>
+        Equity:
+        <input type="text" value="1000" id="equity-input" class="inputs" />
+      </p>
+      <p>Profit: <span id="profit" class="pink"></span></p>
+      <p class="green">
+        --------------------------<br />Precalculated<br />--------------------------
+      </p>
+      <p class="blue">
+        3% <span id="3-target" class="yellow"></span>
+        <span id="3-profit" class="pink"></span>
+      </p>
+      <p class="blue">
+        5% <span id="5-target" class="yellow"></span>
+        <span id="5-profit" class="pink"></span>
+      </p>
+      <p class="blue">
+        7% <span id="7-target" class="yellow"></span>
+        <span id="7-profit" class="pink"></span>
+      </p>
     </div>
-    <!-- jQuery CDN -->
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous"
-    ></script>
-    <script>
-      let selectCurrency;
-      let currentPrice;
 
-      function doWorkSon() {
-        selectCurrency = $("#currency").val();
-        // console.log(selectCurrency);
-        $.ajax({
-          url: `https://api.cryptonator.com/api/full/${selectCurrency}-usd`,
-          success: function (data) {
-            // console.log(data);
-            currentPrice = parseFloat(data.ticker.price);
-            $("#current-price").text(parseFloat(currentPrice).toFixed(8));
-            populateShit();
-          },
-        });
+    <div class="cols">
+      <p class="green">
+        --------------------------<br />Calc Tools<br />--------------------------
+      </p>
+      <!-- Calc Tool #1 [ START ] -->
+      <p id="calc1-sol" class="yellow">0</p>
+      <p>
+        What is
+        <input type="number" value="2" id="calc1-v1" class="inputs" /><span class="blue">
+          %</span>
+        of<br /><br /><input type="text" id="calc1-v2" value="1000" class="inputs" />
+        ? <span id="calc1-clear" class="buttons">Clear</span>
+      </p>
+      <!-- Calc Tool #1 [ END ] -->
 
-        // Fear and Greed Index - API REQUEST
-        $.ajax({
-          url: "https://api.alternative.me/fng/?limit=10&format=json&date_format=us",
-          success: function (fgi) {
-            $("#fgi-wrapper").empty();
-            let fgiIndex = fgi.data;
-            // console.log(fgiIndex);
-            for (let i = 0; i < fgi.data.length; i++) {
-              // console.log(fgi.data[i]);
+      <!-- Calc Tool #2 [ START ] -->
+      <p class="yellow">
+        <span id="calc2-sol">0</span><span class="blue"> %</span>
+      </p>
+      <p>
+        <input type="text" value="25" id="calc2-v1" class="inputs" /> is
+        what<span class="blue"> %</span> of<br /><br /><input type="text" id="calc2-v2" value="622" class="inputs" />
+        ? <span id="calc2-clear" class="buttons">Clear</span>
+      </p>
+      <!-- Calc Tool #2 [ END ] -->
 
-              switch (fgiIndex[i].value_classification) {
-                case "Extreme Greed":
-                  $("#fgi-wrapper").append(
-                    `<p><span class="blue">${fgiIndex[i].timestamp}</span> | <span class="yellow">${fgiIndex[i].value}</span> | <span class="green">${fgiIndex[i].value_classification}</span></p>`
-                  );
-                  break;
-                case "Neutral":
-                  $("#fgi-wrapper").append(
-                    `<p><span class="blue">${fgiIndex[i].timestamp}</span> | <span class="yellow">${fgiIndex[i].value}</span> | <span class="yellow">${fgiIndex[i].value_classification}</span></p>`
-                  );
-                  break;
-                case "Fear":
-                  $("#fgi-wrapper").append(
-                    `<p><span class="blue">${fgiIndex[i].timestamp}</span> | <span class="yellow">${fgiIndex[i].value}</span> | <span class="orange">${fgiIndex[i].value_classification}</span></p>`
-                  );
-                  break;
-                case "Extreme Fear":
-                  $("#fgi-wrapper").append(
-                    `<p><span class="blue">${fgiIndex[i].timestamp}</span> | <span class="yellow">${fgiIndex[i].value}</span> | <span class="red">${fgiIndex[i].value_classification}</span></p>`
-                  );
-                  break;
-                default:
-                  $("#fgi-wrapper").append(
-                    `<p><span class="blue">${fgiIndex[i].timestamp}</span> | <span class="yellow">${fgiIndex[i].value}</span> | <span class="">${fgiIndex[i].value_classification}</span></p>`
-                  );
-              }
+      <!-- Calc Tool #3 [ START ] -->
+      <p class="yellow">
+        <span id="calc3-sol">0</span><span class="blue"> %</span>
+      </p>
+      <p>
+        What is the<span class="blue"> %</span> gain/loss<br /><br />
+        from
+        <input type="text" value="25" id="calc3-v1" class="inputs" /><br /><br />
+        to <input type="text" id="calc3-v2" value="622" class="inputs" /> ?
+        <span id="calc3-clear" class="buttons">Clear</span>
+      </p>
+      <!-- Calc Tool #3 [ END ] -->
+    </div>
+
+    <div class="cols">
+      <p class="green">
+        --------------------------<br />News & Info<br />--------------------------
+      </p>
+      <!-- Fear & Greed Index API [ START ] -->
+      <p style="font-weight: bold">Fear & Greed Index</p>
+      <div id="fgi-wrapper"></div>
+      <!-- Fear and Greed Index API [ END ] -->
+    </div>
+  </div>
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+    let selectCurrency;
+    let currentPrice;
+
+    function doWorkSon() {
+      selectCurrency = $("#currency").val();
+      console.log(selectCurrency);
+      $.ajax({
+        url: `https://api.coingecko.com/api/v3/simple/price?ids=${selectCurrency}&vs_currencies=usd`,
+        success: function (data) {
+          console.log(data);
+          currentPrice = data[selectCurrency].usd;
+          $("#current-price").text(currentPrice);
+          populateShit();
+        },
+      });
+
+      // Fear and Greed Index - API REQUEST
+      $.ajax({
+        url: "https://api.alternative.me/fng/?limit=10&format=json&date_format=us",
+        success: function (fgi) {
+          $("#fgi-wrapper").empty();
+          let fgiIndex = fgi.data;
+          // console.log(fgiIndex);
+          for (let i = 0; i < fgi.data.length; i++) {
+            // console.log(fgi.data[i]);
+
+            switch (fgiIndex[i].value_classification) {
+              case "Extreme Greed":
+                $("#fgi-wrapper").append(
+                  `<p><span class="blue">${fgiIndex[i].timestamp}</span> | <span class="yellow">${fgiIndex[i].value}</span> | <span class="green">${fgiIndex[i].value_classification}</span></p>`
+                );
+                break;
+              case "Neutral":
+                $("#fgi-wrapper").append(
+                  `<p><span class="blue">${fgiIndex[i].timestamp}</span> | <span class="yellow">${fgiIndex[i].value}</span> | <span class="yellow">${fgiIndex[i].value_classification}</span></p>`
+                );
+                break;
+              case "Fear":
+                $("#fgi-wrapper").append(
+                  `<p><span class="blue">${fgiIndex[i].timestamp}</span> | <span class="yellow">${fgiIndex[i].value}</span> | <span class="orange">${fgiIndex[i].value_classification}</span></p>`
+                );
+                break;
+              case "Extreme Fear":
+                $("#fgi-wrapper").append(
+                  `<p><span class="blue">${fgiIndex[i].timestamp}</span> | <span class="yellow">${fgiIndex[i].value}</span> | <span class="red">${fgiIndex[i].value_classification}</span></p>`
+                );
+                break;
+              default:
+                $("#fgi-wrapper").append(
+                  `<p><span class="blue">${fgiIndex[i].timestamp}</span> | <span class="yellow">${fgiIndex[i].value}</span> | <span class="">${fgiIndex[i].value_classification}</span></p>`
+                );
             }
-          },
-        });
-      }
-
-      function populateShit() {
-        let percentInput = $("#percent-input").val() / 100;
-        let deltaPrice = parseFloat(currentPrice * percentInput).toFixed(8);
-        let equityInput = $("#equity-input").val();
-        let targetPrice = parseFloat(
-          currentPrice * percentInput + currentPrice
-        ).toFixed(8);
-        let targetPrice3P = parseFloat(
-          currentPrice * 0.03 + currentPrice
-        ).toFixed(8);
-        let targetPrice5P = parseFloat(
-          currentPrice * 0.05 + currentPrice
-        ).toFixed(8);
-        let targetPrice7P = parseFloat(
-          currentPrice * 0.07 + currentPrice
-        ).toFixed(8);
-        let profit3P = parseFloat(0.03 * equityInput).toFixed(2);
-        let profit5P = parseFloat(0.05 * equityInput).toFixed(2);
-        let profit7P = parseFloat(0.07 * equityInput).toFixed(2);
-        $("#target-price").text(targetPrice);
-        $("#delta-price").text(deltaPrice);
-        $("#profit").text(parseFloat(percentInput * equityInput).toFixed(2));
-        $("#3-target").text(targetPrice3P);
-        $("#5-target").text(targetPrice5P);
-        $("#7-target").text(targetPrice7P);
-        $("#3-profit").text(profit3P);
-        $("#5-profit").text(profit5P);
-        $("#7-profit").text(profit7P);
-      }
-
-      $("#percent-input").on("change", function () {
-        populateShit();
+          }
+        },
       });
+    }
 
-      $("#equity-input").on("change", function () {
-        populateShit();
-      });
+    function populateShit() {
+      let percentInput = $("#percent-input").val() / 100;
+      let deltaPrice = parseFloat(currentPrice * percentInput).toFixed(8);
+      let equityInput = $("#equity-input").val();
+      let targetPrice = parseFloat(
+        currentPrice * percentInput + currentPrice
+      ).toFixed(8);
+      let targetPrice3P = parseFloat(
+        currentPrice * 0.03 + currentPrice
+      ).toFixed(8);
+      let targetPrice5P = parseFloat(
+        currentPrice * 0.05 + currentPrice
+      ).toFixed(8);
+      let targetPrice7P = parseFloat(
+        currentPrice * 0.07 + currentPrice
+      ).toFixed(8);
+      let profit3P = parseFloat(0.03 * equityInput).toFixed(2);
+      let profit5P = parseFloat(0.05 * equityInput).toFixed(2);
+      let profit7P = parseFloat(0.07 * equityInput).toFixed(2);
+      $("#target-price").text(targetPrice);
+      $("#delta-price").text(deltaPrice);
+      $("#profit").text(parseFloat(percentInput * equityInput).toFixed(2));
+      $("#3-target").text(targetPrice3P);
+      $("#5-target").text(targetPrice5P);
+      $("#7-target").text(targetPrice7P);
+      $("#3-profit").text(profit3P);
+      $("#5-profit").text(profit5P);
+      $("#7-profit").text(profit7P);
+    }
 
-      $("#currency").on("change", function () {
-        doWorkSon();
-      });
+    $("#percent-input").on("change", function () {
+      populateShit();
+    });
 
-      $("#refresh").on("click", function () {
-        doWorkSon();
-      });
+    $("#equity-input").on("change", function () {
+      populateShit();
+    });
 
-      // Calc Tools #1 [ Start ].
-      $("#calc1-v1, #calc1-v2").on("change", function () {
-        $("#calc1-sol").text(
-          ($("#calc1-v1").val() / 100) * $("#calc1-v2").val()
-        );
-        if ($("#calc1-sol").text() === "NaN") {
-          $("#calc1-sol").text("Numbers & decimal points only!");
-        }
-      });
-
-      $("#calc1-sol").text(($("#calc1-v1").val() / 100) * $("#calc1-v2").val());
-
-      $("#calc1-clear").on("click", function () {
-        $("#calc1-sol").text("0");
-        $("#calc1-v1").val("");
-        $("#calc1-v2").val("");
-      });
-      // Calc Tools #1 [ END ].
-
-      // Calc Tools #2 [ Start ].
-      $("#calc2-v1, #calc2-v2").on("change", function () {
-        $("#calc2-sol").text(
-          ($("#calc2-v1").val() / $("#calc2-v2").val()) * 100
-        );
-        if ($("#calc2-sol").text() === "NaN") {
-          $("#calc2-sol").text("Numbers & decimal points only!");
-        }
-      });
-
-      $("#calc2-sol").text(($("#calc2-v1").val() / $("#calc2-v2").val()) * 100);
-
-      $("#calc2-clear").on("click", function () {
-        $("#calc2-sol").text("0");
-        $("#calc2-v1").val("");
-        $("#calc2-v2").val("");
-      });
-      // Calc Tools #2 [ END ].
-
-      // Calc Tools #3 [ Start ].
-      $("#calc3-v1, #calc3-v2").on("change", function () {
-        $("#calc3-sol").text(
-          (($("#calc3-v2").val() - $("#calc3-v1").val()) /
-            $("#calc3-v1").val()) *
-            100
-        );
-        if ($("#calc3-sol").text() === "NaN") {
-          $("#calc3-sol").text("Numbers & decimal points only!");
-        }
-      });
-
-      $("#calc3-sol").text(
-        (($("#calc3-v2").val() - $("#calc3-v1").val()) / $("#calc3-v1").val()) *
-          100
-      );
-
-      $("#calc3-clear").on("click", function () {
-        $("#calc3-sol").text("0");
-        $("#calc3-v1").val("");
-        $("#calc3-v2").val("");
-      });
-      // Calc Tools #3 [ END ].
-
+    $("#currency").on("change", function () {
       doWorkSon();
-    </script>
-  </body>
+    });
+
+    $("#refresh").on("click", function () {
+      doWorkSon();
+    });
+
+    // Calc Tools #1 [ Start ].
+    $("#calc1-v1, #calc1-v2").on("change", function () {
+      $("#calc1-sol").text(
+        ($("#calc1-v1").val() / 100) * $("#calc1-v2").val()
+      );
+      if ($("#calc1-sol").text() === "NaN") {
+        $("#calc1-sol").text("Numbers & decimal points only!");
+      }
+    });
+
+    $("#calc1-sol").text(($("#calc1-v1").val() / 100) * $("#calc1-v2").val());
+
+    $("#calc1-clear").on("click", function () {
+      $("#calc1-sol").text("0");
+      $("#calc1-v1").val("");
+      $("#calc1-v2").val("");
+    });
+    // Calc Tools #1 [ END ].
+
+    // Calc Tools #2 [ Start ].
+    $("#calc2-v1, #calc2-v2").on("change", function () {
+      $("#calc2-sol").text(
+        ($("#calc2-v1").val() / $("#calc2-v2").val()) * 100
+      );
+      if ($("#calc2-sol").text() === "NaN") {
+        $("#calc2-sol").text("Numbers & decimal points only!");
+      }
+    });
+
+    $("#calc2-sol").text(($("#calc2-v1").val() / $("#calc2-v2").val()) * 100);
+
+    $("#calc2-clear").on("click", function () {
+      $("#calc2-sol").text("0");
+      $("#calc2-v1").val("");
+      $("#calc2-v2").val("");
+    });
+    // Calc Tools #2 [ END ].
+
+    // Calc Tools #3 [ Start ].
+    $("#calc3-v1, #calc3-v2").on("change", function () {
+      $("#calc3-sol").text(
+        (($("#calc3-v2").val() - $("#calc3-v1").val()) /
+          $("#calc3-v1").val()) *
+        100
+      );
+      if ($("#calc3-sol").text() === "NaN") {
+        $("#calc3-sol").text("Numbers & decimal points only!");
+      }
+    });
+
+    $("#calc3-sol").text(
+      (($("#calc3-v2").val() - $("#calc3-v1").val()) / $("#calc3-v1").val()) *
+      100
+    );
+
+    $("#calc3-clear").on("click", function () {
+      $("#calc3-sol").text("0");
+      $("#calc3-v1").val("");
+      $("#calc3-v2").val("");
+    });
+    // Calc Tools #3 [ END ].
+
+    doWorkSon();
+  </script>
+</body>
+
 </html>
