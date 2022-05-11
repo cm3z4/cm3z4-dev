@@ -30,12 +30,13 @@
 }
 
 html {
-  font-size: 62.5%; /* 10px */
+  font-size: 62.5%;
+  /* 10px */
   scroll-behavior: smooth;
 }
 
 #nojs-alert {
-  text-align: center;
+  text-align: right;
   margin: 12px 0;
   color: var(--gray50);
 }
@@ -294,4 +295,5 @@ footer {
     padding: 0;
   }
 }
+
 /* MONOCHROME SECTION [ END ] */

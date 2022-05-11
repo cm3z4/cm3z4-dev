@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cm3z4 — RetroPie v4.8 Audio Fix for GPi CASE</title>
+    <link rel="canonical" href="https://cm3z4.dev/" />
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/images/favicons/apple-touch-icon.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="/images/favicons/apple-touch-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="/images/favicons/apple-touch-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="/images/favicons/apple-touch-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="/images/favicons/apple-touch-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="/images/favicons/apple-touch-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="/images/favicons/apple-touch-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="/images/favicons/apple-touch-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/favicons/apple-touch-icon-180x180.png"
+    />
+    <!-- Main CSS link. -->
+    <link rel="stylesheet" href="/styles/main.css" />
+  </head>
+
+  <body id="top">
+    <div id="main-wrapper">
+      <a class="post-navs monospace" href="/">Home</a>
+      <hr class="post-lines" />
+      <h1 class="post-titles">RetroPie v4.8 Audio Fix for GPi CASE</h1>
+      <p class="post-dates">10 May 22</p>
+
+      <div class="post-row">
+        <div class="post-col-left">
+          <img
+            src="/images/arr/blog-images/gpi-case-retro.jpg"
+            alt="RetroPie v4.8 Audio Fix for GPi CASE"
+          />
+          <p class="img-caption">
+            GPi CASE, photographed with my Sony Mavica MVC-FD73.
+          </p>
+          <p>
+            I recently got my hands on a used GPi CASE from eBay. From time to
+            time, I enjoy playing some of the original Nintendo games, such as
+            <i>Mortal Kombat</i>, <i>Tetris</i> and <i>The Legend of Zelda</i>.
+            It teleports me back to the early days and helps to temporarily wipe
+            my mind as needed.
+          </p>
+          <p>
+            What I don’t like doing is wasting my time searching through the web
+            for bug/error fixes. And, after flashing RetroPie v4.8 and
+            installing the patches from Retroflag’s website, I got the following
+            errors and could’t get any audio through the speakers.
+          </p>
+          <p>
+            Note: I found the errors in the ~/.emulationstation/es_log.txt file.
+          </p>
+          <p>
+            <i
+              >lvl0: VolumeControl::init() - Failed to attach to default
+              card!<br />lvl0: AudioManager Error - Unable to open SDL audio:
+              ALSA: Couldn't open audio device: No such file or directory</i
+            >
+          </p>
+          <p>
+            I confirmed from
+            <a
+              href="https://retropie.org.uk/forum/topic/31555/no-sound-retroflag-gpi-case-with-pi-zero-w-2-solved/28"
+              rel="noopener"
+              target="_blank"
+              >here</a
+            >
+            what the issue was and then modified the /boot/config.txt file on my
+            system. Don’t forget to reboot after you edit/replace the file.
+          </p>
+          <p>
+            I then got the following error and found a solution from
+            <a
+              href="https://www.reddit.com/r/retroflag_gpi/comments/kbd8jh/how_do_i_fix_failed_to_find_mixer_elements_if/"
+              rel="noopener"
+              target="_blank"
+              >here</a
+            >.
+          </p>
+          <p>
+            <i>lvl0: VolumeControl::init() - Failed to find mixer elements!</i>
+          </p>
+          <p>
+            I figured I’d do a good deed and post my modified config.txt and
+            possibly save others from the frustration I experienced with this
+            issue. 😎
+          </p>
+          <p>
+            You can find the source/gist
+            <a
+              href="https://gist.github.com/cm3z4/74ccd8a1dbe78675b527791110fb2b2a"
+              rel="noopener"
+              target="_blank"
+              >here</a
+            >.
+          </p>
+        </div>
+        <div class="post-col-right">
+          <div class="sticky">
+            <hr class="post-lines" />
+            <ul id="blog-posts">
+              <li>
+                <a href="/posts/blog/blog-index.html" class="post-links"
+                  ><strong>All blog posts</strong></a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <!-- <a
+            href="https://webring.xxiivv.com/#random"
+            rel="noopener"
+            target="_blank"
+            ><img
+              src="/images/webring.svg"
+              style="width: 28px; margin: 0"
+              alt="Webring"
+          /></a> -->
+        <a class="footer-links monospace" href="#top">Top</a>
+      </footer>
+    </div>
+    <!-- Main JavaScript link. -->
+    <script src="/scripts/main.js"></script>
+  </body>
+</html>

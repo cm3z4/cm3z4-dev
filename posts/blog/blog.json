@@ -1,6 +1,11 @@
 {
   "posts": [
     {
+      "postDate": "05-10-22",
+      "postName": "RetroPie v4.8 Audio Fix for GPi CASE",
+      "postPath": "/posts/blog/retropie-v4.8-audio-fix-for-gpi-case.html"
+    },
+    {
       "postDate": "03-14-21",
       "postName": "M5StickC Crypto Tracker",
       "postPath": "/posts/blog/m5stickc-crypto-tracker.html"
