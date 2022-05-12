@@ -1,29 +1,3 @@
-// HOME [ START ]
-
-if (document.getElementById("me-hero")) {
-  // Hover over "me" monochrome swap.
-  document.getElementById("me").onmouseover = function () {
-    meMono();
-  };
-
-  function meMono() {
-    document.getElementById("me").src = "/images/arr/me-mono.png";
-  }
-
-  // Hover out "me" color swap.
-  document.getElementById("me").onmouseout = function () {
-    meColor();
-  };
-
-  function meColor() {
-    document.getElementById("me").src = "/images/arr/me-color.png";
-  }
-}
-
-// HOME [ END ]
-
-// -----------------------------------------------------------------------
-
 // BLOG [ START ]
 
 // Append all the published blog posts.
