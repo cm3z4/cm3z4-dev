@@ -7,7 +7,7 @@
    viewBox="0 0 210 297"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1 (1:1.1+202105261517+ce6663b3b7)"
+   inkscape:version="1.1.2 (1:1.1+202202050950+0a00cf5339)"
    sodipodi:docname="favicon-maker.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -24,15 +24,15 @@
      inkscape:document-units="mm"
      showgrid="false"
      showguides="false"
-     inkscape:zoom="0.94430415"
-     inkscape:cx="544.84564"
-     inkscape:cy="477.60036"
-     inkscape:window-width="1920"
-     inkscape:window-height="1049"
+     inkscape:zoom="0.47215208"
+     inkscape:cx="413.00253"
+     inkscape:cy="438.41807"
+     inkscape:window-width="1366"
+     inkscape:window-height="695"
      inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:window-y="42"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g101855">
+     inkscape:current-layer="layer1">
     <inkscape:grid
        type="xygrid"
        id="grid144406" />
@@ -69,98 +69,52 @@
        width="341.09373"
        height="129.58104"
        id="rect133015" />
+    <rect
+       x="-931.73083"
+       y="463.25217"
+       width="341.09372"
+       height="129.58104"
+       id="rect133015-5" />
   </defs>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <rect
-       style="fill:#1a1a1a;fill-opacity:1;stroke:none;stroke-width:0.362192;stroke-opacity:1"
-       id="rect81751"
-       width="83.585358"
-       height="39.151989"
-       x="67.19268"
-       y="41.922256"
-       inkscape:export-filename="/home/cm3z4/Downloads/cryptromo.png"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96" />
-    <rect
-       style="fill:#1a1a1a;fill-opacity:1;stroke:none;stroke-width:0.362192;stroke-opacity:1"
-       id="rect101851"
-       width="83.585358"
-       height="39.151989"
-       x="-142.73849"
-       y="-58.804451"
+    <path
+       style="fill:#000000;fill-opacity:1;stroke-width:0.264583"
+       id="rect1502"
+       width="92.049683"
+       height="57.934334"
+       x="60.362335"
+       y="106.39041"
+       sodipodi:type="rect"
        inkscape:export-filename="/home/cm3z4/Downloads/favicon.png"
        inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96" />
-    <g
-       id="g101855"
-       transform="matrix(1.3642079,0,0,1.3643615,-245.52556,-203.88104)">
-      <rect
-         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.193936;stroke-opacity:1"
-         id="rect144408"
-         width="67.474815"
-         height="42.462601"
-         x="226.12834"
-         y="224.75539"
-         inkscape:export-filename="/home/cm3z4/Downloads/cryptromo.png"
-         inkscape:export-xdpi="96"
-         inkscape:export-ydpi="96" />
-      <rect
-         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.193936;stroke-opacity:1"
-         id="rect143941"
-         width="67.474815"
-         height="42.462601"
-         x="72.243706"
-         y="150.92839"
-         inkscape:export-filename="/home/cm3z4/Downloads/favicon.png"
-         inkscape:export-xdpi="96"
-         inkscape:export-ydpi="96" />
-      <path
-         style="fill:#7f7f7f;fill-opacity:1;stroke-width:0.193893"
-         d="m 58.807717,200.30777 c -1.03005,-0.31835 -1.98761,-1.32173 -2.24791,-2.35547 -0.30475,-1.21026 -0.30626,-92.83156 -0.002,-94.04166 0.2798,-1.11119 1.29392,-2.12531 2.40511,-2.40511 1.20463,-0.30333 92.830873,-0.30333 94.035503,0 1.11119,0.2798 2.12531,1.29392 2.40511,2.40511 0.30333,1.20462 0.30333,92.83087 0,94.0355 -0.2798,1.11119 -1.29392,2.12531 -2.40511,2.40511 -1.25212,0.31529 -93.167603,0.27285 -94.191153,-0.0435 z m 80.910813,-28.14808 v -21.2313 H 105.98112 72.243707 v 21.2313 21.2313 h 33.737413 33.73741 z m -61.076343,10.95496 v -1.55114 h 27.338933 27.33893 v 1.55114 1.55115 H 105.98112 78.642187 Z m 0,-11.53664 v -1.64809 h 27.338933 27.33893 v 1.64809 1.64809 H 105.98112 78.642187 Z m 0,-11.82748 v -1.64809 h 27.338933 27.33893 v 1.64809 1.64809 H 105.98112 78.642187 Z m 57.974053,-39.06947 v -14.3481 H 105.98112 75.345997 v 14.3481 14.3481 h 30.635123 30.63512 z m -17.25649,0.1939 v -10.08245 h 4.1687 4.1687 v 10.08245 10.08244 h -4.1687 -4.1687 z"
-         id="path101853"
-         inkscape:export-filename="/home/cm3z4/Downloads/favicon.png"
-         inkscape:export-xdpi="96"
-         inkscape:export-ydpi="96" />
-    </g>
-    <text
-       xml:space="preserve"
-       transform="matrix(0.36094667,0,0,0.3609873,216.30823,-151.94509)"
-       id="text123659"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.4101px;line-height:1.75;font-family:monospace;-inkscape-font-specification:'monospace Bold';letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect123661);fill:#000000;fill-opacity:1;stroke:none"
+       inkscape:export-ydpi="96"
+       d="m 60.362335,106.39041 h 92.049685 v 57.93434 H 60.362335 Z" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.362192;stroke-opacity:1"
+       id="rect81751-6"
+       width="83.585358"
+       height="39.151989"
+       x="64.594513"
+       y="45.546127"
        inkscape:export-filename="/home/cm3z4/Downloads/favicon.png"
        inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96"><tspan
-         x="-931.73047"
-         y="492.08646"
-         id="tspan144662">CM3Z4'S
-</tspan><tspan
-         x="-931.73047"
-         y="536.55414"
-         id="tspan144664">WEBSITE</tspan></text>
-    <text
-       xml:space="preserve"
-       transform="matrix(0.36094667,0,0,0.3609873,420.30781,-50.781893)"
-       id="text133013"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.4101px;line-height:1.75;font-family:monospace;-inkscape-font-specification:'monospace Bold';letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect133015);fill:#000000;fill-opacity:1;stroke:none"
-       inkscape:export-filename="/home/cm3z4/Downloads/cryptromo.png"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96"><tspan
-         x="-931.73047"
-         y="492.08646"
-         id="tspan144666">CRYPTROMO</tspan></text>
+       inkscape:export-ydpi="96"
+       sodipodi:type="rect"
+       d="M 64.594513,45.546127 H 148.17987 V 84.698116 H 64.594513 Z" />
     <g
-       id="g121"
-       transform="matrix(1.3642079,0,0,1.3643615,-35.594389,-103.15433)"
-       inkscape:export-filename="/home/cm3z4/Downloads/cryptromo.png"
+       id="g121-9"
+       transform="matrix(1.3642079,0,0,1.3643615,-38.193092,-99.530474)"
+       inkscape:export-filename="/home/cm3z4/Downloads/favicon.png"
        inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96">
+       inkscape:export-ydpi="96"
+       style="fill:#c3bfb6;fill-opacity:1">
       <path
-         style="fill:#6ded8a;fill-opacity:1;stroke-width:0.193893"
+         style="fill:#c3bfb6;fill-opacity:1;stroke-width:0.193893"
          d="m 58.807717,200.30777 c -1.03005,-0.31835 -1.98761,-1.32173 -2.24791,-2.35547 -0.30475,-1.21026 -0.30626,-92.83156 -0.002,-94.04166 0.2798,-1.11119 1.29392,-2.12531 2.40511,-2.40511 1.20463,-0.30333 92.830873,-0.30333 94.035503,0 1.11119,0.2798 2.12531,1.29392 2.40511,2.40511 0.30333,1.20462 0.30333,92.83087 0,94.0355 -0.2798,1.11119 -1.29392,2.12531 -2.40511,2.40511 -1.25212,0.31529 -93.167603,0.27285 -94.191153,-0.0435 z m 80.910813,-28.14808 v -21.2313 H 105.98112 72.243707 v 21.2313 21.2313 h 33.737413 33.73741 z m -61.076343,10.95496 v -1.55114 h 27.338933 27.33893 v 1.55114 1.55115 H 105.98112 78.642187 Z m 0,-11.53664 v -1.64809 h 27.338933 27.33893 v 1.64809 1.64809 H 105.98112 78.642187 Z m 0,-11.82748 v -1.64809 h 27.338933 27.33893 v 1.64809 1.64809 H 105.98112 78.642187 Z m 57.974053,-39.06947 v -14.3481 H 105.98112 75.345997 v 14.3481 14.3481 h 30.635123 30.63512 z m -17.25649,0.1939 v -10.08245 h 4.1687 4.1687 v 10.08245 10.08244 h -4.1687 -4.1687 z"
-         id="path123" />
+         id="path8458" />
     </g>
   </g>
 </svg>

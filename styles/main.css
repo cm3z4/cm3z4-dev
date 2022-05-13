@@ -2,21 +2,6 @@
   --gray50: #7f7f7f;
 }
 
-/* FONTS */
-@font-face {
-  font-family: "alte_haas_grotesk_regular";
-  src: url("../fonts/alte_haas_grotesk_regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "alte_haas_grotesk_bold";
-  src: url("../fonts/alte_haas_grotesk_bold.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
 /* OVERRIDES */
 * {
   margin: 0;
@@ -47,12 +32,12 @@ h3,
 h4,
 h5,
 h6,
+p,
 .sidebar-headers {
-  font-family: "alte_haas_grotesk_bold", "Helvetica Neue", monospace;
+  font-family: sans-serif;
 }
 
 p {
-  font-family: "alte_haas_grotesk_regular", "Helvetica Neue", monospace;
   font-size: 1.6rem;
   line-height: 26px;
 }

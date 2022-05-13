@@ -1,3 +1,5 @@
+console.log("01100011 01101101 00110011 01111010 00110100");
+
 // BLOG [ START ]
 
 // Append all the published blog posts.
